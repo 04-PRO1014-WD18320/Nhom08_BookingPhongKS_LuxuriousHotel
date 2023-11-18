@@ -6,7 +6,7 @@
        if(isset($_GET['act'])){
         $act=$_GET['act'];
         switch ($act) {
-            case 'adddm':
+            case 'adddm':66
                 // kiểm tra người dùng có click vào add hay ko
                 if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
                     $tenloai=$_POST['tenloai'];
