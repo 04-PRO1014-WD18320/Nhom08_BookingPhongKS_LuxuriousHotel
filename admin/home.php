@@ -17,11 +17,11 @@
         <div class="title_admin">
           <ul>
             <li><a href="index.php?act=lisdm" target="page">Loại Phòng</a></li>
-            <li><a href="../html/dangnhap.html" target="page">Danh sách tin tức</a></li>
+            <li><a href="index.php?act=listsp" target="page">Chi tiết Phòng</a></li>
           </ul>
         </div>
         <div class="title_web">
-          <iframe src="index.php?act=lisdm" frameborder="0" allowfullscreen name="page"></iframe>
+          <iframe src="index.php?act=listsp" frameborder="0" allowfullscreen name="page"></iframe>
         </div>
         
       </div>
