@@ -15,11 +15,12 @@ font-family: 'Poppins', sans-serif;
 }
 
 /* ================================================================= container_title */
-.container_title {
+.container_titlect{
    position: relative;
    width: 100%;
    min-height: 500px;
    display: flex;   
+   flex-direction: column;
 }
 
 .background_image {
@@ -234,3 +235,4 @@ font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: black;
  }
+ 
