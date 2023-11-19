@@ -26,7 +26,7 @@
               <th></th>
               <th>Mã </th>
               <th>Tên</th>
-              <th>Giá</th>
+              <th>Giá ($)</th>
               <th>Ảnh</th>
               <th>Mô Tả</th>
               <th>Diện tích</th>
