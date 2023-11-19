@@ -41,7 +41,102 @@
                 }
                 $listdanhmuc=loadall_danhmuc();
                 include "danhmuc/list.php";
-                break;            
+                break;
+                
+            // ==========phần sản phẩm
+            // THÊM SẢN PHẨM
+            case 'addsp':
+                
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    $iddm = $_POST['iddm'];
+                    $tensp = $_POST['tensp'];
+                    $giasp = $_POST['giasp'];
+                    $mota = $_POST['mota'];
+                    $dientich = $_POST['dientich'];
+    
+                    $hinh = $_FILES['hinh']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['hinh']['name']);
+                    if (move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file)) {
+                        
+                    } else {
+                        
+                    }
+    
+                    insert_sanpham($tensp, $giasp, $hinh, $mota, $dientich, $iddm);
+                    $thongbao = "Thêm thành công";
+                }
+
+                $listdanhmuc=loadall_danhmuc();
+                include "sanpham/add.php";
+            break;
+                // DANH SÁCH SẢN PHẨM 
+            case 'listsp':
+                if (isset($_POST['listok']) && ($_POST['listok'])) {
+                    $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
+                    $iddm = isset($_POST['iddm']) ? $_POST['iddm'] : 0;
+                } else {
+                    $kyw = '';
+                    $iddm = 0;
+                }
+    
+                $listdanhmuc = loadall_danhmuc();
+                $listsanpham = loadall_sanpham($kyw, $iddm);
+                include "sanpham/list.php";
+                break;
+                // XÓA SẢN PHẨM 
+            case 'xoasp':
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        delete_sanpham($_GET['id']);
+                    }
+                    $listsanpham = loadall_sanpham("", 0);
+                    include "sanpham/list.php";
+            break;
+            // SỬA SẢN PHẨM THEO ID 
+                case 'suasp':
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $sanpham = loadone_sanpham($_GET['id']);
+                }
+                $listdanhmuc = loadall_danhmuc();
+                include "sanpham/update.php";
+                break;
+            
+            // CẬP NHẬT SẢN PHẨM
+            case 'updatesp':
+                if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                    // var_dump($_POST);die;
+                    $id=$_POST['id'];
+                    $iddm=$_POST['iddm'];
+                    $tensp=$_POST['tensp'];
+                    $giasp=$_POST['giasp'];
+                    $dientich=$_POST['dientich'];
+                    
+                    $mota=$_POST['mota'];
+                    $hinh = $_FILES['hinh']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                    if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                       // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                      } else {
+                       // echo "Sorry, there was an error uploading your file.";
+                      }
+                    update_sanpham($id,$iddm,$tensp,$giasp,$dientich,$mota,$hinh);
+                    $thongbao = "cập nhập thành công thành công";
+                }
+                if (isset($_POST['listok']) && ($_POST['listok'])) {
+                    $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
+                    $iddm = isset($_POST['iddm']) ? $_POST['iddm'] : 0;
+                } else {
+                    $kyw = '';
+                    $iddm = 0;
+                }
+    
+                $listsanpham=loadall_sanpham($kyw, $iddm=0);
+                $listdanhmuc=loadall_danhmuc();
+                include "sanpham/list.php";
+                break;
+                
+
         }
        }else {
         include "home.php";
