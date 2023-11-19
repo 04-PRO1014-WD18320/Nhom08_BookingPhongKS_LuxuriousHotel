@@ -352,3 +352,9 @@ hr{
    text-decoration: none;
    color: black;
 }
+
+.header_box2_tk .fa-solid{
+   font-size: 1.8rem;
+   padding-left: 30px;
+   color: black;
+}

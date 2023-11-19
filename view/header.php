@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dangkytk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
 </head>
@@ -38,7 +39,7 @@
                 </div>
                 <div class="header_box2_menu">
                     <ul>
-                        <li><a href="./index.html">Trang Chủ</a></li>
+                        <li><a href="index.php">Trang Chủ</a></li>
                         <li><a href="./chinhsach.html">Chính Sách</a></li>
                         <li><a href="">Tin Tức</a></li>
                         <li><a href="">Giới Thiệu</a></li>
@@ -46,8 +47,20 @@
                     </ul>
                 </div>
                 <div class="header_box2_tk">
-                    <a href="./dangkytk.html"><input type="button" value="Đăng Ký" ></a>
-                    <a href="./dangnhap.html"><input type="button" value="Đăng Nhập"></a>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        # code...
+                        extract($_SESSION['user']);
+                    ?>
+                        <a href=""><i class="fa-solid fa-heart"></i></a>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                    <?php
+                    }else{
+
+                    ?>
+                        <a href="index.php?act=dangky"><input type="button" value="Đăng Ký" ></a>
+                        <a href="index.php?act=dangnhap"><input type="button" value="Đăng Nhập"></a>
+                    <?php } ?>
                     
                 </div>
             </div>
