@@ -1,7 +1,7 @@
 <?php
 
-function insert_sanpham($tensp, $giasp, $hinh, $mota, $dien_tich, $iddm){
-    $sql = "insert into sanpham(name, price, img, mota, dien_tich, iddm) values('$tensp', '$giasp', '$hinh', '$mota', '$dien_tich', '$iddm')";
+function insert_sanpham($tensp, $giasp, $hinh, $mota, $dientich, $iddm){
+    $sql = "insert into sanpham(name, price, img, mota, dientich, iddm) values('$tensp', '$giasp', '$hinh', '$mota', '$dientich', '$iddm')";
     pdo_execute($sql);
 }
 function delete_sanpham($id){
@@ -27,12 +27,12 @@ function loadone_sanpham($id){
     return $sp;
 }
 
-function update_sanpham($id,$iddm,$tensp,$giasp,$dien_tich,$mota,$hinh){
+function update_sanpham($id,$iddm,$tensp,$giasp,$dientich,$mota,$hinh){
         if ($hinh!="")
             # code...
-            $sql= "update sanpham set iddm='".$iddm."', name='".$tensp."',price='".$giasp."', img='".$hinh."', thuonghieu='".$dien_tich."', mota='".$mota."'  where id=".$id;
+            $sql= "update sanpham set iddm='".$iddm."', name='".$tensp."',price='".$giasp."', img='".$hinh."', dientich='".$dientich."', mota='".$mota."'  where id=".$id;
         else 
-            $sql= "update sanpham set iddm='".$iddm."',name='".$tensp."',price='".$giasp."', dien_tich='".$dien_tich."', mota='".$mota."'  where id=".$id;                
+            $sql= "update sanpham set iddm='".$iddm."',name='".$tensp."',price='".$giasp."', dientich='".$dientich."', mota='".$mota."'  where id=".$id;                
         pdo_execute($sql);
     } 
 

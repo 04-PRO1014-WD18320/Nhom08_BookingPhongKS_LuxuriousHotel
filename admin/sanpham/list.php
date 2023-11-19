@@ -5,6 +5,22 @@
       <div class="row">
         <div class="row_nb10 fomdsloai">
             <form action="index.php?act=listsp" method="post">
+            <input type="text" name="kyw">
+            <select name="iddm" id="">
+              <option value="0" selected>Tất cả</option>
+              <?php
+                foreach ($listdanhmuc as $danhmuc) {
+                  extract($danhmuc);
+                  if ($iddm == $id) {
+                      $s = "selected";
+                  } else {
+                      $s = "";
+                  }
+                  echo '<option value="' . $id . '" ' . $s . '>' . $name . '</option>';
+              }
+              ?>
+            </select>
+            <input type="submit" name="listok">
           <table>
             <tr>
               <th></th>
@@ -37,7 +53,7 @@
                   <td>'.$price.'</td>
                   <td>'.$hinh.'</td>
                   <td>'.$mota.'</td>
-                  <td>'.$dien_tich.'</td>
+                  <td>'.$dientich.'</td>
                   <td><a href="'.$suasp.'"><input type="button" value="Sửa"></a><a href="'.$xoasp.'"><input type="button" value="Xóa"></a> </td>
                 </tr>
                 ';

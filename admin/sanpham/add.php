@@ -48,7 +48,7 @@
           <!-- diện tích -->
           <div class="row_mb21">
               <label>Diện tích </label> <br>
-              <input type="text" name="dien_tich">
+              <input type="text" name="dientich">
           </div><br>
           <!-- tải ảnh chi tiết -->
           <!-- <div class="row_mb21">
