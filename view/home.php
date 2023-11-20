@@ -44,13 +44,19 @@
                     <p>Luxurious Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
                 </div>
                 <div class="title_box2_hotel">
-                    <div class="hotel_sp">
+                    <?php
+                    foreach ($spnew as $sp){
+                        extract($sp);
+                        $hinh=$img_path.$img;
+                        echo '
+                        <a href="index.php?act=sanphamct&idsp='.$id.'">
+                        <div class="hotel_sp">
                         <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
+                            <img src="'.$hinh.'" alt="" >
                         </div>
                         <div class="hotel_sp_price">
                             <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
+                                <h3><a href="index.php?act=sanphamct&idsp='.$id.'">'.$name.'</a></h3>
                                 <div class="star">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -58,163 +64,15 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: 2000$</h4>
+                                <h4>Giá: '.$price.'$</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                                
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="title_box2_hotel">
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Vip Cạnh Hồ Bơi </a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="./chitietphong.html">A01 - Phòng Cạnh Hồ Bơi ok</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
+                    </div> </a>' ;
+                    }
+                    ?>
                 </div>
             </div>
             <div class="banner2">
@@ -228,13 +86,20 @@
                     <p>Luxurious Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
                 </div>
                 <div class="title_box2_hotel">
-                    <div class="hotel_sp">
+                    <?php
+                        foreach ($top10 as $top10) {
+                            # code...
+                            extract($top10);
+                            $hinh=$img_path.$img;
+                            echo '
+                        <a href="index.php?act=sanphamct&idsp='.$id.'">
+                        <div class="hotel_sp">
                         <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
+                            <img src="'.$hinh.'" alt="" >
                         </div>
                         <div class="hotel_sp_price">
                             <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
+                                <h3><a href="index.php?act=sanphamct&idsp='.$id.'">'.$name.'</a></h3>
                                 <div class="star">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -242,76 +107,15 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: 2000$</h4>
+                                <h4>Giá: '.$price.'$</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
+                    </div> </a>' ;
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -324,13 +128,19 @@
                     <p>Poly's Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
                 </div>
                 <div class="title_box2_hotel">
-                    <div class="hotel_sp">
+                    <?php
+                    foreach ($spnew as $sp){
+                        extract($sp);
+                        $hinh=$img_path.$img;
+                        echo '
+                        <a href="index.php?act=sanphamct&idsp='.$id.'">
+                        <div class="hotel_sp">
                         <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
+                            <img src="'.$hinh.'" alt="" >
                         </div>
                         <div class="hotel_sp_price">
                             <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
+                                <h3><a href="index.php?act=sanphamct&idsp='.$id.'">'.$name.'</a></h3>
                                 <div class="star">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -338,76 +148,15 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: 2000$</h4>
+                                <h4>Giá: '.$price.'$</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="image/bc1.jpg" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3>A01 - Phòng Cạnh Hồ Bơi</h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: 2000$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
+                    </div> </a>' ;
+                    }
+                    ?>
                 </div>
             </div>
 
