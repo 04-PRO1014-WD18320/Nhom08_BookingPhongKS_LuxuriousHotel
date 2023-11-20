@@ -22,11 +22,20 @@ function loadall_sanpham($kyw, $iddm=0){
     return $listsanpham;    
 }
 function loadone_sanpham($id){
-    $sql = "select * from sanpham where id=". $id;
+    $sql = "select * from sanpham where id =". $id;
     $sp = pdo_query_one($sql);
     return $sp;
 }
-
+function loadone_sanpham_cungloai($id){
+    $sql = "select * from sanpham where id <>". $id;
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+    function loadall_sanpham_home(){
+        $sql = "select * from sanpham where 1 order by id desc limit 0,4";
+        $listsanpham=pdo_query($sql);
+        return $listsanpham;
+    }
 function update_sanpham($id,$iddm,$tensp,$giasp,$dientich,$mota,$hinh){
         if ($hinh!="")
             # code...
@@ -48,5 +57,12 @@ function loadone_ten_dm($iddm){
         }
 
     }
+    function loadall_sanpham_top10(){
+        $sql = "select * from sanpham where 1 order by luotxem desc limit 0,4";
+        $listsanpham=pdo_query($sql);
+        return $listsanpham;
+    }
+
+
 
 ?>
