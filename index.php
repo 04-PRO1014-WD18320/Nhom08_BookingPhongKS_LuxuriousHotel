@@ -6,14 +6,14 @@
     include "model/danhmuc.php";
     include "model/taikhoan.php";
     include "view/header.php";
+    include "global.php";
 
     // if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
 
-
-    // $spnew = loadall_sanpham_home();
+    $top10 =  loadall_sanpham_top10();
+    $spnew = loadall_sanpham_home();
     // $dsdm = loadall_danhmuc();
-    // $dstop10 = loadall_sanpham_top10();
     // $sptrangct = loadall_sanpham_ct();
     
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -34,6 +34,16 @@
                 $dssp = loadall_sanpham($kyw,$iddm);
                 $tendm= loadone_ten_dm($iddm);
                 include 'view/sanpham.php';
+                break;
+            case 'sanphamct':
+                
+                if (isset($_GET['idsp']) && ($_GET['idsp'])) {
+                    // Mã lệnh khi điều kiện đúng
+                    $id = $_GET['idsp'];
+                    $sp_cung_loai =  loadone_sanpham_cungloai($id);
+                }
+                $onesp = loadone_sanpham($id);
+                include "view/sanphamct.php";
                 break;
             case 'sanphamct':
                 if (isset($_GET['idsp']) && ($_GET['idsp'])) {
@@ -73,6 +83,7 @@
                 }
                 include "view/taikhoan/dangnhap.php";
                 break;
+
             case 'edit_taikhoan':
                 # code...
                 if (isset($_POST['capnhat']) && ($_POST['capnhat'])){
