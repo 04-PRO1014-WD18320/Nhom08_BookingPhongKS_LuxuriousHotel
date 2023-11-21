@@ -2,6 +2,7 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
+    include "../model/binhluan.php";
     include "header.php";
        if(isset($_GET['act'])){
         $act=$_GET['act'];
@@ -135,7 +136,21 @@
                 $listdanhmuc=loadall_danhmuc();
                 include "sanpham/list.php";
                 break;
-                
+                case 'dsbl':
+                    $listbinhluan=loadall_binhluan(0);    
+                    include "binhluan/list.php";
+                    break;
+                case 'xoabl':
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    delete_binhluan($_GET['id']);
+                }
+                $listbinhluan = loadall_binhluan(0);
+                include "binhluan/list.php";
+                break;
+                default:
+                    include "home.php";
+                    
+                    break;   
 
         }
        }else {
