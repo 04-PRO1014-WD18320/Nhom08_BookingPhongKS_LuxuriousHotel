@@ -120,6 +120,9 @@
                 session_unset();
                 header('Location: index.php');  
                 break;
+            case 'chinhsach':
+                include "view/chinhsach.php";
+                break;
         }
     }else{
        include "view/home.php"; 
