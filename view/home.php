@@ -9,8 +9,8 @@
             <div class="container_banner_search">
                 <form action="" method="post">
                     <div class="search_box1">
-                        <input type="text"  class="input1" placeholder="Bạn muốn tìm gì nào......">
-                        <input type="submit" value="Tìm Kiếm" class="input2">
+                        <input type="text" name="kyw"  class="input1" placeholder="Bạn muốn tìm gì nào......">
+                        <input type="submit" value="Tìm Kiếm" class="input2" name="timkiem">
                     </div>
                     <div class="search_box2">
                         <select name="" id="">
@@ -21,13 +21,19 @@
                             <option>Dưới 1tr</option>
                             <option>Dưới 1tr</option>
                         </select>
-                        <select name="" id="">
-                            <option value="">Lọc Loại Phòng</option>
-                            <option>Dưới 1tr</option>
-                            <option>Trên 1tr</option>
-                            <option>Dưới 500k</option>
-                            <option>Dưới 1tr</option>
-                            <option>Dưới 1tr</option>
+                        <select name="iddm" id="">
+                        <option value="0" selected>Tất cả</option>
+                            <?php
+                                foreach ($dsdm as $danhmuc) {
+                                extract($danhmuc);
+                                if ($iddm == $id) {
+                                    $s = "selected";
+                                } else {
+                                    $s = "";
+                                }
+                                echo '<option value="' . $id . '" ' . $s . '>' . $name . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                 </form>
