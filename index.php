@@ -13,7 +13,7 @@
 
     $top10 =  loadall_sanpham_top10();
     $spnew = loadall_sanpham_home();
-    // $dsdm = loadall_danhmuc();
+    $dsdm = loadall_danhmuc();
     // $sptrangct = loadall_sanpham_ct();
     
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
