@@ -3,6 +3,7 @@
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
     include "../model/binhluan.php";
+    include "../model/taikhoan.php";
     include "header.php";
        if(isset($_GET['act'])){
         $act=$_GET['act'];
@@ -150,7 +151,11 @@
                 default:
                     include "home.php";
                     
-                    break;   
+                    break; 
+            case 'dskh':
+                $listtaikhoan=loadall_taikhoan();    
+                include "taikhoan/list.php";
+                break;  
 
         }
        }else {
