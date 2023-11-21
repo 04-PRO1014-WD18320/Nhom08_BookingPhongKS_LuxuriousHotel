@@ -123,6 +123,10 @@
             case 'chinhsach':
                 include "view/chinhsach.php";
                 break;
+            case 'chitiettk':
+                # code...
+                include "view/taikhoan/chitiettk.php";
+                break;
         }
     }else{
        include "view/home.php"; 

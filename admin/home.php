@@ -19,6 +19,7 @@
             <li><a href="index.php?act=lisdm" target="page">Loại Phòng</a></li>
             <li><a href="index.php?act=listsp" target="page">Chi tiết Phòng</a></li>
             <li><a href="index.php?act=dsbl" target="page">Bình Luận</a></li>
+            <li><a href="index.php?act=dskh" target="page">Khách Hàng</a></li>
           </ul>
         </div>
         <div class="title_web">
