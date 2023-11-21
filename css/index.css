@@ -116,6 +116,8 @@ font-family: 'Poppins', sans-serif;
     border: 1px solid gray;
     font-size: 1rem;
 }
+
+
 /*------------------------------------------------------------------------------tìm kiếm--------------------------------*/
 .input2{
     width: 18%;
@@ -168,6 +170,7 @@ hr{
    border: 1px solid gray;
    border-radius: 5px;
    width: 24%;
+   min-height: 230px;
 }
 .hotel_sp img{
    width: 100%;
