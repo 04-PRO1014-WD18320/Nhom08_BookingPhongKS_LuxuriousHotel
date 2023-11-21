@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/dangkytk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/chitietphong.css">
+    <link rel="stylesheet" href="css/chinhsach.css">
     
 </head>
 <body>
@@ -41,7 +42,7 @@
                 <div class="header_box2_menu">
                     <ul>
                         <li><a href="index.php">Trang Chủ</a></li>
-                        <li><a href="./chinhsach.html">Chính Sách</a></li>
+                        <li><a href="index.php?act=chinhsach">Chính Sách</a></li>
                         <li><a href="">Tin Tức</a></li>
                         <li><a href="">Giới Thiệu</a></li>
                         <li><a href="./lienhe.html">Liên Hệ</a></li>
