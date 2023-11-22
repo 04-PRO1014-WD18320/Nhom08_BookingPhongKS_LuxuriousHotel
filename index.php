@@ -124,8 +124,8 @@
                 include "view/chinhsach.php";
                 break;
                 case 'chitiettk':
-                    include "view/taikhoan/chitiettk.php";
-                    break;
+                include "view/taikhoan/chitiettk.php";
+                break;
         }
     }else{
        include "view/home.php"; 
