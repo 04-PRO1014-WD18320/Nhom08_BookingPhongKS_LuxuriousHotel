@@ -32,6 +32,8 @@
                     $tensp = loadall_sanpham($kyw, $iddm, $locgia);
                     $tendm = load_ten_dm($iddm);
                     include "view/sanpham.php";
+
+                    //nam day
                 break;
                 
             case 'sanphamct':
