@@ -55,7 +55,7 @@
                         extract($_SESSION['user']);
                     ?>
                         <a href=""><i class="fa-solid fa-heart"></i></a>
-                        <a href=""><i class="fa-solid fa-user"></i></a>
+                        <a href="index.php?act=chitiettk"><i class="fa-solid fa-user"></i></a>
                     <?php
                     }else{
 
