@@ -99,8 +99,7 @@ $dsbl = loadall_binhluan($idpro);
                 echo '<p class="error">Bạn đã bình luận không phù hợp. Vui lòng giữ văn hóa.</p>';
             } else {
                 insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
-                header("Location: " . $_SERVER['PHP_SELF'] . "?idpro=" . $idpro);
-                // header("Location:index.php?act=sanphamct");
+                // header("Location: " . $_SERVER['PHP_SELF'] . "?idpro=" . $idpro);
                 exit();
             }
         }
