@@ -32,6 +32,7 @@
                             <td>'.$tel.'</td>
                             <td>'.$role.'</td>
                             <td><a href="'. $suatk .'"><input type="button" value="Sửa"></a><a href="'. $xoatk .'"><input type="button" value="Xóa"></a></td>
+                            <td><a href="lienhe.php">Xem chi Tiết</a></td>
                         </tr>';
                     }
                     ?>
@@ -41,7 +42,6 @@
                 <input class="mr20" type="button" value="CHỌN TẤT CẢ">
                 <input class="mr20" type="button" value="BỎ CHỌN TẤT CẢ">
                 <input class="mr20" type="button" value="XÓA MỤC ĐÃ CHỌN">
-                <a href="index.php?act=adddm"> <input class="mr20" type="button" value="NHẬP THÊM"></a>
             </div>
         </form>
     </div>
