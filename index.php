@@ -3,10 +3,13 @@
     session_start();
     include "model/pdo.php";
     include "model/sanpham.php";
+    include "model/Booking.php";
     include "model/danhmuc.php";
     include "model/taikhoan.php";
     include "view/header.php";
     include "global.php";
+
+
 
     // if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
@@ -36,19 +39,31 @@
                 include 'view/sanpham.php';
                 break;
             case 'sanphamct':
-                
+                if(isset($_POST['order-btn'])){
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $today = date('Y-m-d');
+                    if($_POST['recieve']<$today){
+                        $condition=false;
+                        echo'<script>alert("Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!")</script>';
+                    }else if($_POST['recieve']>=$_POST['return']){
+                        $condition=false;
+                        echo'<script>alert("Ngày đặt phải nhỏ hơn ngày trả!")</script>';
+                    }else{
+                        $condition=true;
+                    }
+                    if($condition){
+                        $check=createOrder($_POST['recieve'],$_POST['return'],$_POST['maPhong'],$_SESSION['user']['id'],$_POST['donGia']);
+                        if($check){
+                            echo'<script>alert("Đặt phòng thành công!")</script>';
+                        }else{
+                            echo'<script>alert("Đặt phòng thành công!")</script>';
+                        }
+                    }
+                }
                 if (isset($_GET['idsp']) && ($_GET['idsp'])) {
                     // Mã lệnh khi điều kiện đúng
                     $id = $_GET['idsp'];
                     $sp_cung_loai =  loadone_sanpham_cungloai($id);
-                }
-                $onesp = loadone_sanpham($id);
-                include "view/sanphamct.php";
-                break;
-            case 'sanphamct':
-                if (isset($_GET['idsp']) && ($_GET['idsp'])) {
-                    // Mã lệnh khi điều kiện đúng
-                    $id = $_GET['idsp'];
                 }
                 $onesp = loadone_sanpham($id);
                 include "view/sanphamct.php";
@@ -127,6 +142,10 @@
                 # code...
                 include "view/taikhoan/chitiettk.php";
                 break;
+
+        
+                
+
         }
     }else{
        include "view/home.php"; 

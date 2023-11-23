@@ -25,14 +25,16 @@
                     <form action="" method="post">
                         <div class="form_input">
                             <p>Ngày Nhận Phòng</p>
-                            <input type="date" name="" id="">
+                            <input type="date" name="recieve" id="" required>
                         </div>
                         <div class="form_input">
                             <p>Ngày Trả Phòng</p>
-                            <input type="date" name="" id="">
+                            <input type="date" name="return" id="" required>
                         </div>
-                        <input type="submit" value="Đặt Phòng">
-                        <h3>Giá: <?= $onesp['price']?>$</h3>
+                        <input type="number" name="maPhong" value="<?php echo $_GET['idsp'] ?>" hidden>
+                        <input type="number" name="donGia" value="<?php echo $onesp['price'] ?>" hidden>
+                        <input type="submit" name="order-btn" value="Đặt Phòng">
+                        <h3>Giá: <?= $onesp['price']?>$/Day</h3>
                         <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p>
                         <h4>Diện Tích: <?= $onesp['dientich']?>m</h4>
                     </form>
