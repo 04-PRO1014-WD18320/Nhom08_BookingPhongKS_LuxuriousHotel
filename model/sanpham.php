@@ -9,18 +9,30 @@ function delete_sanpham($id){
     pdo_query($sql);
 }
 
-function loadall_sanpham($kyw, $iddm=0){
-    $sql="select * from sanpham where 1";
-    if ($kyw !="") {
-        $sql.=" and name like '%".$kyw."%'";
+function loadall_sanpham($kyw, $iddm=0, $locgia){
+    $sql = "select * from sanpham where 1";
+    if ($kyw != "") {
+        $sql .= " and name like '%" . $kyw . "%'";
     }
-    if ($iddm>0) {
-        $sql.=" and iddm = '".$iddm."'";
+    if ($iddm > 0) {
+        $sql .= " and iddm = '" . $iddm . "'";
     }
-    $sql.=" order by id desc";
+    if ($locgia != "") {
+        if ($locgia == '1') {
+            $sql .= " AND price < 100"; // Dưới 100
+        } elseif ($locgia == '2') {
+            $sql .= " AND price BETWEEN 100 AND 300"; // Từ 100 đến 300
+        }elseif ($locgia == '3') {
+            $sql .= " AND price > 500"; // Trên 500
+        } elseif ($locgia == '4') {
+            $sql .= " AND price > 1000"; // Trên 1000
+        }
+    }
+    $sql .= " order by id desc";
     $listsanpham = pdo_query($sql);
-    return $listsanpham;    
+    return $listsanpham;
 }
+
 function loadone_sanpham($id){
     $sql = "select * from sanpham where id =". $id;
     $sp = pdo_query_one($sql);
@@ -32,7 +44,7 @@ function loadone_sanpham_cungloai($id){
     return $listsanpham;
 }
     function loadall_sanpham_home(){
-        $sql = "select * from sanpham where 1 order by id desc limit 0,4";
+        $sql = "select * from sanpham where 1 order by id desc limit 0,4";  
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }
@@ -45,7 +57,7 @@ function update_sanpham($id,$iddm,$tensp,$giasp,$dientich,$mota,$hinh){
         pdo_execute($sql);
     } 
 
-function loadone_ten_dm($iddm){
+function load_ten_dm($iddm){
         if ($iddm>0) {
             # code...
             $sql="select * from danhmuc where id=".$iddm;
