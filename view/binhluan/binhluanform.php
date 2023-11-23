@@ -2,7 +2,7 @@
 session_start();
 include "../../model/pdo.php";
 include "../../model/binhluan.php";
-$badWords = array("mẹ mày", "cẹc" , "cha" , "dm");
+$badWords = array("mẹ mày", "cặc" , "cha" , "dm");
 $idpro = $_REQUEST['idpro'];
 $dsbl = loadall_binhluan($idpro);
 ?>

@@ -32,11 +32,11 @@
                             <input type="date" name="" id="">
                         </div>
                         <input type="submit" value="Đặt Phòng">
+                        <input type="submit" value="Thêm vào giỏ hàng" name="addtocart">
                         <h3>Giá: <?= $onesp['price']?>$</h3>
                         <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p>
                         <h4>Diện Tích: <?= $onesp['dientich']?>m</h4>
                     </form>
-                    
                 </div>
             </div>
             <div class="title_box2">
