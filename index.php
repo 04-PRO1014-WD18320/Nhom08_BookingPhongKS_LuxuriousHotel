@@ -107,7 +107,7 @@
                     }
                     
                 }
-                include "view/taikhoan/quenmk.php";
+                include "view/taikhoan/quenmatmk.php";
                 break;
             case 'thoat':
                 # code...
@@ -117,8 +117,7 @@
             case 'chinhsach':
                 include "view/chinhsach.php";
                 break;
-            case 'chitiettk':
-                # code...
+                case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
                 break;
         }
