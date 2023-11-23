@@ -84,6 +84,7 @@
                 }
                 include "view/taikhoan/dangky.php";
                 break;
+                
             case 'dangnhap':
                 # code...
                 if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])){
