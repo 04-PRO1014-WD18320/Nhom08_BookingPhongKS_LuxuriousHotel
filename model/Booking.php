@@ -38,6 +38,6 @@ class Booking
         $tongtien=(($year2*365 +$month2*30+$day2)-($year1*365 +$month1*30+$day1))*$donGia;
         $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien)
         VALUES ('$newRecieve', '$newReturn', $maPhong, $userid,$tongtien)";
-        return pdo_execute($sql);
+        return pdo_execute_return_lastInsertId($sql);
     }
 ?>

@@ -6,6 +6,7 @@
     include "model/Booking.php";
     include "model/danhmuc.php";
     include "model/taikhoan.php";
+    include "model/thanhtoan.php";
     include "view/header.php";
     include "global.php";
 
@@ -54,10 +55,12 @@
                     }
                     if($condition){
                         $check=createOrder($_POST['recieve'],$_POST['return'],$_POST['maPhong'],$_SESSION['user']['id'],$_POST['donGia']);
+                        var_dump($check);
                         if($check){
                             echo'<script>alert("Đặt phòng thành công!")</script>';
+                            header("Location: index.php?act=thanhtoan&id-bill=$check");
                         }else{
-                            echo'<script>alert("Đặt phòng thành công!")</script>';
+                            echo'<script>alert("Đặt phòng thành công 1!")</script>';
                         }
                     }
                 }
@@ -147,7 +150,7 @@
             case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
                 break;
-            
+
         
                 
 
