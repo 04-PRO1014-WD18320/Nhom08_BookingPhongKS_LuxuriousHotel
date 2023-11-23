@@ -32,7 +32,7 @@ function loadone_sanpham_cungloai($id){
     return $listsanpham;
 }
     function loadall_sanpham_home(){
-        $sql = "select * from sanpham where 1 order by id desc limit 0,4";
+        $sql = "select * from sanpham where 1 order by id desc limit 0,4";  
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }

@@ -123,7 +123,7 @@
             case 'chinhsach':
                 include "view/chinhsach.php";
                 break;
-                case 'chitiettk':
+            case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
                 break;
         }
