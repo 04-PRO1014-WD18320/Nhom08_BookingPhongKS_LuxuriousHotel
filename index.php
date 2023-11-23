@@ -15,26 +15,27 @@
     $spnew = loadall_sanpham_home();
     $dsdm = loadall_danhmuc();
     // $sptrangct = loadall_sanpham_ct();
-    
+
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $act=($_GET['act']);
         switch ($act) {
             case 'sanpham':
-                if (isset($_POST['kyw']) && ($_POST['kyw']!="")) {
-                    $kyw = $_POST['kyw'];
-
-                }else {
-                    $kyw ="";
-                }
-                if (isset($_GET['iddm']) && ($_GET['iddm']>0)) {
-                    $iddm = $_GET['iddm'];  
-                }else{
+                if (isset($_POST['timkiem'])) {
+                    $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
+                    $iddm = isset($_POST['iddm']) ? $_POST['iddm'] : 0;
+                    $locgia = isset($_POST['locgia']) ? $_POST['locgia'] : '';
+                } else {
+                    $kyw = "";
                     $iddm = 0;
+                    $locgia = "";
                 }
-                $dssp = loadall_sanpham($kyw,$iddm);
-                $tendm= loadone_ten_dm($iddm);
-                include 'view/sanpham.php';
+                    $tensp = loadall_sanpham($kyw, $iddm, $locgia);
+                    $tendm = load_ten_dm($iddm);
+                    include "view/sanpham.php";
+
+                    //nam day
                 break;
+                
             case 'sanphamct':
                 
                 if (isset($_GET['idsp']) && ($_GET['idsp'])) {
@@ -45,14 +46,7 @@
                 $onesp = loadone_sanpham($id);
                 include "view/sanphamct.php";
                 break;
-            case 'sanphamct':
-                if (isset($_GET['idsp']) && ($_GET['idsp'])) {
-                    // Mã lệnh khi điều kiện đúng
-                    $id = $_GET['idsp'];
-                }
-                $onesp = loadone_sanpham($id);
-                include "view/sanphamct.php";
-                break;
+
             case 'dangky':
                 # code...
                 if (isset($_POST['dangky']) && ($_POST['dangky'])){
