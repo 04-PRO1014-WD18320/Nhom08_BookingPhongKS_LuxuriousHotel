@@ -77,13 +77,15 @@
                 if (isset($_POST['listok']) && ($_POST['listok'])) {
                     $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
                     $iddm = isset($_POST['iddm']) ? $_POST['iddm'] : 0;
+                    $locgia = isset($_POST['locgia']) ? $_POST['locgia'] : '';
                 } else {
                     $kyw = '';
                     $iddm = 0;
+                    $locgia = "";
                 }
     
                 $listdanhmuc = loadall_danhmuc();
-                $listsanpham = loadall_sanpham($kyw, $iddm);
+                $listsanpham = loadall_sanpham($kyw, $iddm, $locgia);
                 include "sanpham/list.php";
                 break;
                 // XÓA SẢN PHẨM 
@@ -133,7 +135,7 @@
                     $iddm = 0;
                 }
     
-                $listsanpham=loadall_sanpham($kyw, $iddm=0);
+                $listsanpham=loadall_sanpham($kyw, $iddm, $locgia);
                 $listdanhmuc=loadall_danhmuc();
                 include "sanpham/list.php";
                 break;
@@ -156,6 +158,8 @@
                 $listtaikhoan=loadall_taikhoan();    
                 include "taikhoan/list.php";
                 break;  
+
+             
 
         }
        }else {

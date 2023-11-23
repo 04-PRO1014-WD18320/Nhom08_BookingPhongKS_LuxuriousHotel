@@ -7,6 +7,7 @@
     include "model/danhmuc.php";
     include "model/taikhoan.php";
     include "model/thanhtoan.php";
+    include "model/lienhe.php";
     include "view/header.php";
     include "global.php";
 
@@ -138,6 +139,20 @@
                 }
                 include "view/taikhoan/quenmatmk.php";
                 break;
+                
+            case 'lienhe':
+                if(isset($_POST['submit']) && ($_POST['submit'])){
+                    $name = $_POST['ten'];
+                    $sdt = $_POST['sdt'];
+                    $email = $_POST['email'];
+                    $noidung = $_POST['noidung'];
+                    insert_lienhe($name,$sdt,$email,$noidung);  
+                    $thongbao = "Đã Gửi Thành Công!";
+                }
+                
+                include "../../lienhe.php";
+                break; 
+
             case 'thoat':
                 # code...
                 session_unset();
@@ -156,9 +171,6 @@
                 include "view/thanhtoan.php";
                 break;
             
-
-        
-                
 
         }
     }else{
