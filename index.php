@@ -22,7 +22,8 @@
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $act=($_GET['act']);
-        switch ($act) {
+        switch ($act) { 
+            //=============================SẢN PHẨM 
             case 'sanpham':
                 if (isset($_POST['timkiem'])) {
                     $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
@@ -37,7 +38,6 @@
                     $tendm = load_ten_dm($iddm);
                     include "view/sanpham.php";
 
-                    //nam day
                 break;
                 
             case 'sanphamct':
@@ -73,7 +73,7 @@
                 break;
 
 
-
+                ///==========================TÀI KHOẢN
             case 'dangky':
                 # code...
                 if (isset($_POST['dangky']) && ($_POST['dangky'])){
@@ -136,18 +136,20 @@
                 }
                 include "view/taikhoan/quenmatmk.php";
                 break;
-                
-            case 'lienhe':
-                if(isset($_POST['submit']) && ($_POST['submit'])){
-                    $name = $_POST['ten'];
-                    $sdt = $_POST['sdt'];
-                    $email = $_POST['email'];
-                    $noidung = $_POST['noidung'];
-                    insert_lienhe($name,$sdt,$email,$noidung);  
-                    $thongbao = "Đã Gửi Thành Công!";
-                }
-                
-                include "../../lienhe.php";
+
+                //============================LIÊN HỆ
+                case 'lienhe':
+                    if (isset($_POST['submit']) && ($_POST['submit'])){
+                        $email = $_POST['email'];
+                        $name = $_POST['name'];
+                        $sdt = $_POST['sdt'];
+                        $noidung = $_POST['noidung'];
+
+                        insert_lienhe($name, $sdt, $email, $noidung);
+                        $thongbao = "Đã Gửi Thành Công!";
+                    }
+                    
+                    include "view/lienhe.php";
                 break; 
 
             case 'thoat':

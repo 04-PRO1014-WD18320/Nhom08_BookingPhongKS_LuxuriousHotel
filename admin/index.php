@@ -4,10 +4,12 @@
     include "../model/sanpham.php";
     include "../model/binhluan.php";
     include "../model/taikhoan.php";
+    include "../model/lienhe.php";
     include "header.php";
        if(isset($_GET['act'])){
         $act=$_GET['act'];
         switch ($act) {
+            // =======================DANH MỤC
             case 'adddm':
                 // kiểm tra người dùng có click vào add hay ko
                 if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
@@ -72,7 +74,7 @@
                 $listdanhmuc=loadall_danhmuc();
                 include "sanpham/add.php";
             break;
-                // DANH SÁCH SẢN PHẨM 
+                // DANH SÁCH SẢN PHẨM VÀ TÌM KIẾM SẢN PHẨM 
             case 'listsp':
                 if (isset($_POST['listok']) && ($_POST['listok'])) {
                     $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
@@ -139,6 +141,8 @@
                 $listdanhmuc=loadall_danhmuc();
                 include "sanpham/list.php";
                 break;
+
+                //================= BÌNH LUẬN VÀ DANH SÁCH KHÁCH HÀNG
                 case 'dsbl':
                     $listbinhluan=loadall_binhluan(0);    
                     include "binhluan/list.php";
@@ -158,6 +162,20 @@
                 $listtaikhoan=loadall_taikhoan();    
                 include "taikhoan/list.php";
                 break;  
+                
+                // =============LIÊN HỆ 
+            case 'lienhe':
+                $listlienhe = loadall_lienhe();    
+                include "taikhoan/lienhe.php";
+                break;
+
+            case 'xoalienhe':
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        delete_lienhe($_GET['id']);
+                    }
+                    $listlienhe = loadall_lienhe();
+                    include "taikhoan/lienhe.php";
+            break;
 
              
 
