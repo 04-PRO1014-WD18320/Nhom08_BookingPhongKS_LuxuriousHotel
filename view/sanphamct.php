@@ -2,7 +2,7 @@
             <input type="text"><input type="submit" value="Tìm Kiếm">
         </div>
         <hr>
-        <div class="container_title">
+        <div class="container_titlect">
             <div class="title_box1">    
                 <div class="title_img">
                     <div class="title_text">
@@ -34,15 +34,17 @@
                         <input type="number" name="donGia" value="<?php echo $onesp['price'] ?>" hidden>
                         <input type="submit" name="order-btn" value="Đặt Phòng">
                         <h3>Giá: <?= $onesp['price']?>$/Day</h3>
-                        <input type="submit" value="Đặt Phòng">
-                        <input type="submit" value="Thêm vào giỏ hàng" name="addtocart">
                         <h3>Giá: <?= $onesp['price']?>$</h3>
                         <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p>
                         <h4>Diện Tích: <?= $onesp['dientich']?>m</h4>
                     </form>
                 </div>
             </div>
-            <div class="title_box2">
+            
+            
+            
+        </div>
+        <div class="title_box2">
                 <div class="mota">
                     <h1>Mô tả</h1>
                     <p><?= $onesp['mota']?></p>
@@ -93,6 +95,3 @@
                 </div>
                 </div>
             </div>
-            
-            
-        </div>
