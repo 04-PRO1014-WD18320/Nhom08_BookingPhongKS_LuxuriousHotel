@@ -37,7 +37,7 @@
             </div>
             <div class="container_header_box2">
                 <div class="header_box2_logo">
-                    <img src="image/logochinh.jpg" alt="">
+                    <a href="index.php"><img src="image/logochinh.jpg" alt=""></a>
                 </div>
                 <div class="header_box2_menu">
                     <ul>
