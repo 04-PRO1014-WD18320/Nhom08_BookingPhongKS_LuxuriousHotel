@@ -38,7 +38,7 @@ if (isset($_SESSION['user'])) {
             </div>
             <div class="box2_text">
                 <ul>
-                    <li><a href="">Đăng nhập vào trang quản trị</a></li>
+                    <li><a href="admin/index.php">Đăng nhập vào trang quản trị</a></li>
                     <li><a href="">Giỏ Hàng</a></li>
                     <li><a href="">Danh Sách Đặt Lịch</a></li>
                     <li><a href="">Danh Sách Yêu Thích</a></li>
