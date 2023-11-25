@@ -9,7 +9,7 @@ function delete_sanpham($id){
     pdo_query($sql);
 }
 
-function loadall_sanpham($kyw, $iddm=0, $locgia){
+function loadall_sanpham($kyw, $iddm=0, $locgia=""){
     $sql = "select * from sanpham where 1";
     if ($kyw != "") {
         $sql .= " and name like '%" . $kyw . "%'";

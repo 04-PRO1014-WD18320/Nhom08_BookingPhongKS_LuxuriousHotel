@@ -45,7 +45,7 @@
                         <li><a href="index.php?act=chinhsach">Chính Sách</a></li>
                         <li><a href="">Tin Tức</a></li>
                         <li><a href="">Giới Thiệu</a></li>
-                        <li><a href="./lienhe.html">Liên Hệ</a></li>
+                        <li><a href="index.php?act=lienhe">Liên Hệ</a></li>
                     </ul>
                 </div>
                 <div class="header_box2_tk">
