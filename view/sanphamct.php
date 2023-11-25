@@ -34,7 +34,6 @@
                         <input type="number" name="donGia" value="<?php echo $onesp['price'] ?>" hidden>
                         <input type="submit" name="order-btn" value="Đặt Phòng">
                         <h3>Giá: <?= $onesp['price']?>$/Day</h3>
-                        <h3>Giá: <?= $onesp['price']?>$</h3>
                         <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p>
                         <h4>Diện Tích: <?= $onesp['dientich']?>m</h4>
                     </form>
