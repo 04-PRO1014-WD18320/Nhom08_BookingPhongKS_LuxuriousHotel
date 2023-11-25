@@ -35,6 +35,16 @@
                             ?>
                         </select>
                     </div>
+                    <hr>
+                    <div class="search_box3">
+                        <div class="form_input1">
+                            <p>Ngày Nhận Phòng</p>
+                            <input type="date" name="recieve" id="" required>
+                        </div>
+                        <div class="form_input1">
+                            <p>Ngày Trả Phòng</p>
+                            <input type="date" name="return" id="" required>
+                    </div>
                 </form>
             </div>
         </div>
