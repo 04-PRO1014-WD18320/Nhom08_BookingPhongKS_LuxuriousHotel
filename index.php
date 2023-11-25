@@ -7,6 +7,7 @@
     include "model/danhmuc.php";
     include "model/taikhoan.php";
     include "model/thanhtoan.php";
+    include "model/lienhe.php";
     include "view/header.php";
     include "global.php";
 
@@ -22,7 +23,8 @@
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $act=($_GET['act']);
-        switch ($act) {
+        switch ($act) { 
+            //=============================SẢN PHẨM 
             case 'sanpham':
                 if (isset($_POST['timkiem'])) {
                     $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
@@ -76,7 +78,7 @@
                 break;
 
 
-
+                ///==========================TÀI KHOẢN
             case 'dangky':
                 # code...
                 if (isset($_POST['dangky']) && ($_POST['dangky'])){
@@ -140,6 +142,22 @@
                 }
                 include "view/taikhoan/quenmatmk.php";
                 break;
+
+                //============================LIÊN HỆ
+                case 'lienhe':
+                    if (isset($_POST['submit']) && ($_POST['submit'])){
+                        $email = $_POST['email'];
+                        $name = $_POST['name'];
+                        $sdt = $_POST['sdt'];
+                        $noidung = $_POST['noidung'];
+
+                        insert_lienhe($name, $sdt, $email, $noidung);
+                        $thongbao = "Đã Gửi Thành Công!";
+                    }
+                    
+                    include "view/lienhe.php";
+                break; 
+
             case 'thoat':
                 # code...
                 session_unset();
@@ -151,10 +169,6 @@
             case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
                 break;
-            
-        
-                
-
         }
     }else{
        include "view/home.php"; 
