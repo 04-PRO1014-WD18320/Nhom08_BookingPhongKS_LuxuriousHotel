@@ -36,35 +36,36 @@
                     $tensp = loadall_sanpham($kyw, $iddm, $locgia);
                     $tendm = load_ten_dm($iddm);
                     include "view/sanpham.php";
-
-                    //nam day
                 break;
                 
             case 'sanphamct':
-                if(isset($_POST['order-btn'])){
+                if (isset($_POST['order-btn'])) {
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $today = date('Y-m-d');
-                    if($_POST['recieve']<$today){
-                        $condition=false;
-                        echo'<script>alert("Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!")</script>';
-                    }else if($_POST['recieve']>=$_POST['return']){
-                        $condition=false;
-                        echo'<script>alert("Ngày đặt phải nhỏ hơn ngày trả!")</script>';
-                    }else{
-                        $condition=true;
+                
+                    if ($_POST['recieve'] < $today) {
+                        $condition = false;
+                        echo '<script>alert("Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!")</script>';
+                   } else if ($_POST['recieve'] >= $_POST['return']) {
+                        $condition = false;
+                        echo '<script>alert("Ngày đặt phải nhỏ hơn ngày trả!")</script>';
+                    } else {
+                        $condition = true;
                     }
-                    if($condition){
-                        $check=createOrder($_POST['recieve'],$_POST['return'],$_POST['maPhong'],$_SESSION['user']['id'],$_POST['donGia']);
-                        var_dump($check);
-                        if($check){
-                            echo'<script>alert("Đặt phòng thành công!")</script>';
+                
+                    if ($condition) {
+                        $check = createOrder($_POST['recieve'], $_POST['return'], $_POST['maPhong'], $_SESSION['user']['id'], $_POST['donGia']);
+                        // var_dump($check);
+                        if ($check) {
+                            echo '<script>alert("Đặt phòng thành công!")</script>';
                             header("Location: index.php?act=thanhtoan&id-bill=$check");
-                        }else{
-                            echo'<script>alert("Đặt phòng thành công 1!")</script>';
+                            exit(); // Thêm lệnh exit() để chắc chắn dừng việc thực thi sau khi chuyển hướng trang
+                        } else {
+                            echo '<script>alert("Đặt phòng không thành công!")</script>';
                         }
                     }
                 }
-
+                
                 if (isset($_GET['idsp']) && ($_GET['idsp'])) {
                     // Mã lệnh khi điều kiện đúng
                     $id = $_GET['idsp'];
@@ -150,7 +151,7 @@
             case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
                 break;
-
+            
         
                 
 

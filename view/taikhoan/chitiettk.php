@@ -31,6 +31,7 @@ if (isset($_SESSION['user'])) {
 
     <div class="container_titletk">
        <div class="titletk_box1">
+        
             <div class="box1_img">
                 <img src="./image/logochinh.jpg" alt="">
                 <p>Tên tài khoản: <?= $name_user ?></p>

@@ -365,3 +365,18 @@ hr{
    padding-left: 30px;
    color: black;
 }
+.search_box3{
+   width: 100%;
+   /* justify-content: space-between; */
+   display: flex;
+}
+.form_input1{
+   width: 50%;
+   
+   margin-top: 20px;
+}
+.form_input1 input{
+   margin-top: 10px;
+   width: 97% ;
+   height: 40px;
+}

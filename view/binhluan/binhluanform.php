@@ -38,6 +38,7 @@ $dsbl = loadall_binhluan($idpro);
         <div class="danhmuc_box2 binhluan">
             <table>
                 <?php
+                $isInappropriate = false; // Thêm dòng này
                 foreach ($dsbl as $bl) {
                     extract($bl);
                     $isInappropriate = false;
@@ -97,9 +98,11 @@ $dsbl = loadall_binhluan($idpro);
         
             if ($isInappropriate) {
                 echo '<script>alert("Bạn đã bình luận không phù hợp. Vui lòng giữ văn hóa.");</script>';
+                // header("location: " . $_SERVER['HTTP_REFERER']);
+                exit();
             } else {
                 insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
-                header("Location: " . $_SERVER['PHP_SELF'] . "?idpro=" . $idpro);
+                header("location: " . $_SERVER['HTTP_REFERER']);
                 exit();
             }
         }

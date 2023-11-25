@@ -19,7 +19,7 @@
         <div class="container_header">
             <div class="container_header_box1">
                 <div class="header_box1_img">
-                    <img src="image/logofb2.png" alt="">
+                    <!-- <img src="image/logofb2.png" alt=""> -->
                     <img src="image/logotw.png" alt="">
                     <img src="image/logogg.png" alt="">
                 </div>
