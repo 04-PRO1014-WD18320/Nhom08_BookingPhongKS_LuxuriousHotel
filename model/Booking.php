@@ -53,6 +53,7 @@ function createOrder($recieve, $return, $maPhong, $userid, $donGia)
     if (!checkAvailability($newRecieve, $newReturn, $maPhong)) {
         echo '<script>alert("Lịch đặt bị trùng. Vui lòng đặt lại!")</script>';
         return false;
+
     }
 
     $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien)
