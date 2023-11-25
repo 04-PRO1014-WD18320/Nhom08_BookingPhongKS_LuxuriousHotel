@@ -1,5 +1,5 @@
 <div class="banner">
-            <input type="text"><input type="submit" value="Tìm Kiếm">
+            <input type="text" name="kyw"><input type="submit" name="timkiem" value="Tìm Kiếm">
         </div>
         <hr>
         <div class="container_titlect">
@@ -33,16 +33,12 @@
                         <input type="number" name="maPhong" value="<?php echo $_GET['idsp'] ?>" hidden>
                         <input type="number" name="donGia" value="<?php echo $onesp['price'] ?>" hidden>
                         <input type="submit" name="order-btn" value="Đặt Phòng">
-                        <h3>Giá: <?= $onesp['price']?>$/Day</h3>
-                        <h3>Giá: <?= $onesp['price']?>$</h3>
-                        <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p>
+                        <h3>Giá: <?= $onesp['price']?>$/Day</h3><br>
+                        <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p><br><br>
                         <h4>Diện Tích: <?= $onesp['dientich']?>m</h4>
                     </form>
                 </div>
             </div>
-            
-            
-            
         </div>
         <div class="title_box2">
                 <div class="mota">
