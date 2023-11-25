@@ -167,6 +167,13 @@
             case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
                 break;
+            case 'thanhtoan':
+                $id_bill = $_GET['id-bill'];
+                $one_bill = getOneBill($id_bill);
+                # code...
+                include "view/thanhtoan.php";
+                break;
+            
 
         }
     }else{
