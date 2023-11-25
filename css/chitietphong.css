@@ -184,7 +184,7 @@ font-family: 'Poppins', sans-serif;
 
 
  /* ================================================================= container_title */
- .container_title{
+ .container_titlect{
     width: 80%;
     margin: 20px auto;
  }
@@ -235,7 +235,7 @@ font-family: 'Poppins', sans-serif;
  }
  .title_form input[type="submit"]{
    margin-top: 15px;
-   width: 300px;
+   width: 150px;
    height: 30px;
    border-radius: 10px;
    background-color: orange;
