@@ -152,6 +152,10 @@ hr{
    justify-content: center;
    align-items: center;
 }
+.container_title{
+   width: 80%;
+   margin: 0 auto;
+}
 .title_box1_text{
    justify-content: center;
    display: flex;
