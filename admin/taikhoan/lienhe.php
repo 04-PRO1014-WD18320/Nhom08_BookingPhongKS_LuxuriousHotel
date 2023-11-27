@@ -7,13 +7,12 @@
             <div class="row2 mb10 formds_loai">
                 <table>
                     <tr>
-                        <th></th>
                         <th>MÃ TÀI KHOẢN</th>
                         <th>HỌ TÊN</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                         <th>EMAIL</th>
                         <th>ĐỊA CHỈ</th>
-                        <th>nỘI DUNG</th>
+                        <th>NỘI DUNG</th>
                     </tr>
                     <?php
                     foreach ($listlienhe as $lienhe) {

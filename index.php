@@ -166,7 +166,7 @@
                 break;
             case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
-                break;
+                break;  
 
         }
     }else{
