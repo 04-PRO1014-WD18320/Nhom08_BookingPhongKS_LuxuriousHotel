@@ -34,7 +34,15 @@ function checkAvailability($recieve, $return, $maPhong)
 
     return $result['count'] == 0; // Trả về true nếu không có lịch trùng, ngược lại trả về false
 }
-
+function loadall_donhang(){
+    $sql = "select * from donhang order by id desc";
+    $listdonhang=pdo_query($sql);
+    return $listdonhang;
+}
+function delete_donhang($id){
+    $sql = "delete  from donhang where id=".$id;
+    pdo_execute($sql);
+}
 function createOrder($recieve, $return, $maPhong, $userid, $donGia)
 {
     $newRecieve = date('Y-m-d', strtotime($recieve));
@@ -53,12 +61,9 @@ function createOrder($recieve, $return, $maPhong, $userid, $donGia)
     if (!checkAvailability($newRecieve, $newReturn, $maPhong)) {
         echo '<script>alert("Lịch đặt bị trùng. Vui lòng đặt lại!")</script>';
         return false;
-
     }
-
     $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien)
             VALUES ('$newRecieve', '$newReturn', $maPhong, $userid, $tongtien)";
-
     // Đảm bảo bạn đã thay thế pdo_execute_return_lastInsertId() bằng hàm tương tự trong mã của bạn
     return pdo_execute_return_lastInsertId($sql);
 }

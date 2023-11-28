@@ -39,7 +39,9 @@
                     $tendm = load_ten_dm($iddm);
                     include "view/sanpham.php";
                 break;
-                
+                case 'sanphamtheongay':
+                        include "view/sanpham.php";
+                    break;
                 case 'sanphamct':
                     if (isset($_POST['order-btn'])) {
                         date_default_timezone_set('Asia/Ho_Chi_Minh');
