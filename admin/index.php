@@ -6,11 +6,23 @@
     include "../model/taikhoan.php";
     include "../model/lienhe.php";
     include "../model/cart.php";
+    include "../model/Booking.php";
     include "header.php";
        if(isset($_GET['act'])){
         $act=$_GET['act'];
         switch ($act) {
             // =======================DANH MỤC
+            case 'listdonhang':
+                $listdonhang =  loadall_donhang();
+                include "donhang/list.php";
+                break;
+            case 'xoadh':  
+                if (isset($_GET['id'])&&($_GET['id']>0)){
+                    delete_donhang($_GET['id']);
+                }
+                $listdonhang=loadall_donhang();
+                include "donhang/list.php";
+                break;
             case 'adddm':
                 // kiểm tra người dùng có click vào add hay ko
                 if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
