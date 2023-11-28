@@ -22,6 +22,7 @@
             <li><a href="index.php?act=dskh" target="page">Khách Hàng</a></li>
             <li><a href="index.php?act=lienhe" target="page">Thông Tin Liên Hệ Khách</a></li>
             <li><a href="index.php?act=thongke" target="page">Thống Kê</a></li>
+            <li><a href="index.php?act=listdonhang" target="page">Đơn hàng</a></li>
           </ul>
         </div>
         <div class="title_web">
