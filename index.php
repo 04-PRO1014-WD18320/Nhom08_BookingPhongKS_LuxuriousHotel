@@ -7,6 +7,7 @@
     include "model/danhmuc.php";
     include "model/taikhoan.php";
     include "model/thanhtoan.php";
+    include "model/lichsudathang.php";
     include "model/lienhe.php";
     include "view/header.php";
     include "global.php";
@@ -176,6 +177,19 @@
                 # code...
                 include "view/thanhtoan.php";
                 break;
+
+            case 'lichsudathang': 
+
+                if(isset($_SESSION['user'])){
+                    $maKhachHang = $_SESSION['user']['id'];   
+                    $lichsudathang = select_bill_idUser_done($maKhachHang);
+                   
+                }
+                include "view/lichsudathang.php";
+                break;
+
+
+      
             
         }
     }else{
