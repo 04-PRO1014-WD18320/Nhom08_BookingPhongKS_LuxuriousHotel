@@ -1,10 +1,10 @@
-<div class="row2">
-    <div class="row2 font_title">
+<div class="row">
+    <div class="row_header">
         <h1>DANH SÁCH TÀI KHOẢN</h1>
     </div>
-    <div class="row2 form_content ">
+    <div class="row">
         <form action="#" method="POST">
-            <div class="row2 mb10 formds_loai">
+            <div class="row_nb10 fomdsloai">
                 <table>
                     <tr>
                         <th></th>
@@ -37,7 +37,7 @@
                     ?>
                 </table>
             </div>
-            <div class="row mb10 ">
+            <div class="row_mb21">
                 <input class="mr20" type="button" value="CHỌN TẤT CẢ">
                 <input class="mr20" type="button" value="BỎ CHỌN TẤT CẢ">
                 <input class="mr20" type="button" value="XÓA MỤC ĐÃ CHỌN">
