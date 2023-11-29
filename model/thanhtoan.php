@@ -6,5 +6,4 @@ function getOneBill($id_bill){
     return $sp;
 }
 
-
 ?>

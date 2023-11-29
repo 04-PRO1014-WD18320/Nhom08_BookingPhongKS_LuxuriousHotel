@@ -40,7 +40,7 @@ if (isset($_SESSION['user'])) {
                 <ul>
                     <li><a href="admin/index.php">Đăng nhập vào trang quản trị</a></li>
                     <li><a href="">Giỏ Hàng</a></li>
-                    <li><a href="">Danh Sách Đặt Lịch</a></li>
+                    <li><a href="index.php?act=lichsudathang">Danh Sách Đặt Lịch</a></li>
                     <li><a href="">Danh Sách Yêu Thích</a></li>
                     <li><a href="index.php?act=quenmk">Quên Mật Khẩu</a></li>
                     <li><a href="index.php?act=edit_taikhoan">Sửa Tài Khoản</a></li>
