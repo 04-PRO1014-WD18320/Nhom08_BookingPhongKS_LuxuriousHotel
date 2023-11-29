@@ -36,14 +36,21 @@
                         </select>
                     </div>
                     <hr>
+                    
+                </form>
+                <form action="index.php?act=sanphamtheongay" method="post">
                     <div class="search_box3">
                         <div class="form_input1">
                             <p>Ngày Nhận Phòng</p>
-                            <input type="date" name="recieve" id="" required>
+                            <input type="date" name="ngaynhan">
                         </div>
                         <div class="form_input1">
                             <p>Ngày Trả Phòng</p>
-                            <input type="date" name="return" id="" required>
+                            <input type="date" name="ngaytra">
+                        </div>
+                        <div class="form_input1">
+                            <input type="submit" value="Tìm Kiếm theo Ngày" class="input2" name="timkiemngay">
+                        </div>
                     </div>
                 </form>
             </div>

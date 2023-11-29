@@ -1,10 +1,18 @@
 <div class="row">
     <div class="row_header">
+<<<<<<< HEAD
         <h1>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</h1>
     </div>
     <div class="row">
         <form action="#" method="POST">
             <div class="row_nb10 fomdsloai">
+=======
+        <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
+    </div>
+    <div class="row ">
+        <form action="#" method="POST">
+            <div class="row_mb20">
+>>>>>>> 8267adff89719c526182e316461c40f600d5a185
                 <table>
                     <tr>
                         <th>MÃ TÀI KHOẢN</th>
@@ -32,7 +40,7 @@
                     ?>
                 </table>
             </div>
-            <div class="row mb10 ">
+            <div class="row_mb21 ">
                 <input class="mr20" type="button" value="CHỌN TẤT CẢ">
                 <input class="mr20" type="button" value="BỎ CHỌN TẤT CẢ">
                 <input class="mr20" type="button" value="XÓA MỤC ĐÃ CHỌN">

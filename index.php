@@ -7,6 +7,7 @@
     include "model/danhmuc.php";
     include "model/taikhoan.php";
     include "model/thanhtoan.php";
+    include "model/lichsudathang.php";
     include "model/lienhe.php";
     include "view/header.php";
     include "global.php";
@@ -39,7 +40,9 @@
                     $tendm = load_ten_dm($iddm);
                     include "view/sanpham.php";
                 break;
-                
+                case 'sanphamtheongay':
+                        include "view/sanpham.php";
+                    break;
                 case 'sanphamct':
                     if (isset($_POST['order-btn'])) {
                         date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -175,6 +178,19 @@
                 # code...
                 include "view/thanhtoan.php";
                 break;
+
+            case 'lichsudathang': 
+
+                if(isset($_SESSION['user'])){
+                    $maKhachHang = $_SESSION['user']['id'];   
+                    $lichsudathang = select_bill_idUser_done($maKhachHang);
+                   
+                }
+                include "view/lichsudathang.php";
+                break;
+
+
+      
             
         }
     }else{
