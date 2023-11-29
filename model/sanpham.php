@@ -32,6 +32,17 @@ function loadall_sanpham($kyw, $iddm=0, $locgia=""){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+function getAvailableRooms($check_in_date, $check_out_date)
+{
+    $sql = "SELECT * FROM sanpham WHERE id NOT IN (
+                SELECT maPhong FROM donhang 
+                WHERE ('$check_in_date' BETWEEN ngayNhan AND ngayTra) 
+                OR ('$check_out_date' BETWEEN ngayNhan AND ngayTra)
+            )";
+
+    $availableRooms = pdo_query($sql);
+    return $availableRooms;
+}
 
 function loadone_sanpham($id){
     $sql = "select * from sanpham where id =". $id;

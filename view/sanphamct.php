@@ -15,11 +15,6 @@
                                 echo '<img src="'.$img.'" alt="">';
                             ?>
                     </div>
-                    <div class="title_img_box">
-                        <img src="image/bc2.jpg" alt="">
-                        <img src="image/bc2.jpg" alt="">
-                        <img src="image/bc2.jpg" alt="">
-                    </div>
                 </div>
                 <div class="title_form">
                     <form action="" method="post">

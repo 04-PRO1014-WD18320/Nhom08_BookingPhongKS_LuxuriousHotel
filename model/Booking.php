@@ -43,6 +43,11 @@ function delete_donhang($id){
     $sql = "delete  from donhang where id=".$id;
     pdo_execute($sql);
 }
+function tim_kiem_phong(){
+    $sql = "SELECT * FROM donhang WHERE ngayNhan NOT BETWEEN 'ngay_nhan_phong' AND 'ngay_tra_phong' AND ngayTra NOT BETWEEN 'ngay_nhan_phong' AND 'ngay_tra_phong'";
+    $timkiem=pdo_query($sql);
+    return $timkiem;
+}
 function createOrder($recieve, $return, $maPhong, $userid, $donGia)
 {
     $newRecieve = date('Y-m-d', strtotime($recieve));

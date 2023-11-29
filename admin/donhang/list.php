@@ -13,6 +13,7 @@
               <th>Mã Phòng</th>
               <th>Mã Khách Hàng</th>
               <th>Tổng Tiền</th>
+              <th>Trạng Thái</th>
               <th></th>
             </tr>
             <?php
@@ -31,6 +32,7 @@
                     <td>'.$maPhong.'</td>
                     <td>'.$maKhachHang.'</td>
                     <td>'.$tongTien.'</td>
+                    <td>'.$trangthai.'</td>
                   <td><a href="'.$xoadh.'"><input type="button" value="Xóa"></a> </td>
                 </tr>
                 ';

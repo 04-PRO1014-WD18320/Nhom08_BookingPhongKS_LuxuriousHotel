@@ -192,8 +192,10 @@ font-family: 'Poppins', sans-serif;
    width: 70%;
  }
  .img_chinh img{
+   border-radius: 10px;
+   margin-top: 10px;
    width: 97%;
-   height: 360px;
+   height: 400px;
  }
  .title_img_box img{
    width: 32%;

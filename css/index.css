@@ -116,7 +116,15 @@ font-family: 'Poppins', sans-serif;
     border: 1px solid gray;
     font-size: 1rem;
 }
-
+.form_inputngay input[type="submit"]{
+   width: 120%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 1rem;
+    background-color: orange;
+    margin-top: 48px;
+}
 
 /*------------------------------------------------------------------------------tìm kiếm--------------------------------*/
 .input2{

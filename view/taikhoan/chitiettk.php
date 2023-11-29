@@ -38,7 +38,11 @@ if (isset($_SESSION['user'])) {
             </div>
             <div class="box2_text">
                 <ul>
-                    <li><a href="admin/index.php">Đăng nhập vào trang quản trị</a></li>
+                <?php
+                    if ($role==1) {?>
+                        <li><a href="admin/index.php">Đăng nhập Admin</a></li>
+                    <?php } ?>
+                    <!-- <li><a href="admin/index.php">Đăng nhập vào trang quản trị</a></li> -->
                     <li><a href="">Giỏ Hàng</a></li>
                     <li><a href="">Danh Sách Đặt Lịch</a></li>
                     <li><a href="">Danh Sách Yêu Thích</a></li>

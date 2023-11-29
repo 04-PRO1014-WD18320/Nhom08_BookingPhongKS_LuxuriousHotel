@@ -19,12 +19,37 @@
     $top10 =  loadall_sanpham_top10();
     $spnew = loadall_sanpham_home();
     $dsdm = loadall_danhmuc();
+    $sp_cung_loai = loadone_sanpham_cungloai($id);
     // $sptrangct = loadall_sanpham_ct();
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $act=($_GET['act']);
         switch ($act) { 
             //=============================SẢN PHẨM 
+            case 'timkiem':
+                if (isset($_POST['timkiemngay'])) {
+                    $check_in_date = $_POST['ngaynhan'];
+                    $check_out_date = $_POST['ngaytra'];
+            
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $today = date('Y-m-d');
+            
+                    if ($check_in_date < $today) {
+                        $condition = false;
+                        echo '<script>alert("Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!")</script>';
+                    } else if ($check_in_date >= $check_out_date) {
+                        $condition = false;
+                        echo '<script>alert("Ngày đặt phải nhỏ hơn ngày trả!")</script>';
+                    } else {
+                        $condition = true;
+                    }
+            
+                    if ($condition) {
+                        $availableRooms = getAvailableRooms($check_in_date, $check_out_date);
+                        include "view/sanphamngay.php";
+                    }
+                }
+                break;
             case 'sanpham':
                 if (isset($_POST['timkiem'])) {
                     $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
@@ -42,6 +67,7 @@
                 case 'sanphamtheongay':
                         include "view/sanpham.php";
                     break;
+                    
                 case 'sanphamct':
                     if (isset($_POST['order-btn'])) {
                         date_default_timezone_set('Asia/Ho_Chi_Minh');
