@@ -256,7 +256,14 @@ font-family: 'Poppins', sans-serif;
  }
 
 
-
+.ktradangnhap{
+   margin-left: 20px;
+   line-height: 380px;
+}
+.title_form p{
+   font-size: 22px;
+   color: red;
+}
 
 
  /*------------------------------------------------------------------ san pham -------------------------------*/

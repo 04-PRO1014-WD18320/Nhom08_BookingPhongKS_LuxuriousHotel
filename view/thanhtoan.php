@@ -1,15 +1,77 @@
 <div class="container_title_baiviet">
-                <h1>Thanh toán</h1>
-                <div class="title_baiviet" style="display : flex ; flex-direction:column">
-                   <span>id bill  : <?=$one_bill['id']?> </span>
-                   <span>ngày nhận : <?=$one_bill['ngayNhan']?> </span>
-                   <span>ngày trả : <?=$one_bill['ngayTra']?></span>
-                   <span>mã phòng : <?=$one_bill['maPhong']?></span>
-                   <span>mã khách hàng : <?=$one_bill['maKhachHang']?></span>
-                   <span>Tổng tiền : <?=$one_bill['tongTien']?></span>
+    <h1>Thanh Toán</h1>
+         <?php
 
-                   <img width="100px" src="data:image/png;base64,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" alt="">
+            if (isset($_SESSION['user'])) {
+               
+               extract($_SESSION['user']);
+               
+               $name_user = $_SESSION['user']['user'];
+               $email_user = $_SESSION['user']['email'];
+               $address_user = $_SESSION['user']['address'];
+               $tel_user = $_SESSION['user']['tel'];
+
+            }else{
+
+               $name_user = 'Không có';
+               $email_user = 'Không có';
+               $address_user = 'Không có';
+               $tel_user = 'Không có';
+               
+            }
+         ?>
+
+<div class="thongtin">
+        <h1>Thông Khách đặt hàng</h1>
+        
+            <div class="ox1">
+                <p>Tên: <?= $name_user ?></p>
+                <div style = "display : flex ">
+                <p>Số Điện Thoại:</p>
+                <input type="text" value = "<?= $address_user ? $address_user : 'Không có' ?>">
                 </div>
-                <button>Thanh toán</button>
+
                 
-            </div>
+            
+            
+                <p>Email: <?= $email_user ?></p>
+                <div style = "display : flex ">
+                <p>Địa Chỉ:</p>
+                <input type="text" value="<?= $address_user ? $address_user : 'Không có' ?>">        
+                </div>
+
+            </div> 
+
+    <div class="table-container">
+        <div class="column-names">
+            <span>ID Bill</span>
+            <span>Ngày Nhận</span>
+            <span>Ngày Trả</span>
+            <span>Mã Phòng</span>
+            <span>Mã Khách Hàng</span>
+            <span>Tổng Tiền</span>
+        </div>
+        <div class="data">
+            <span><?=$one_bill['id']?></span>
+            <span><?=$one_bill['ngayNhan']?></span>
+            <span><?=$one_bill['ngayTra']?></span>
+            <span><?=$one_bill['maPhong']?></span>
+            <span><?=$one_bill['maKhachHang']?></span>
+            <span><?=$one_bill['tongTien']?></span>
+        </div>
+    </div>
+    <!-- Add an ID to the button for easier selection -->
+<button id="thanh-toan-btn">Thanh toán</button>
+
+<script>
+    // Add an event listener to the button
+    document.getElementById('thanh-toan-btn').addEventListener('click', function() {
+        // Perform payment confirmation here
+        // You can use AJAX to send a request to the server for processing the payment
+
+        // Assuming a successful payment, display a confirmation message
+        alert('Thanh toán thành công!');
+    });
+</script>
+
+</div>

@@ -19,25 +19,47 @@ class Booking
             return false;
         }
     }
-
-
-    
 }
- function createOrder($recieve, $return, $maPhong, $userid,$donGia)
-    {
-        $newRecieve = date('Y-m-d', strtotime($recieve));
-        $newReturn = date('Y-m-d', strtotime($return));
-        $timestamp1 = strtotime($newRecieve);
-        $day1 = date('d', $timestamp1);
-        $month1 = date('m', $timestamp1);
-        $year1 = date('Y', $timestamp1);
-        $timestamp2 = strtotime($newReturn);
-        $day2 = date('d', $timestamp2);
-        $month2 = date('m', $timestamp2);
-        $year2 = date('Y', $timestamp2);
-        $tongtien=(($year2*365 +$month2*30+$day2)-($year1*365 +$month1*30+$day1))*$donGia;
-        $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien)
-        VALUES ('$newRecieve', '$newReturn', $maPhong, $userid,$tongtien)";
-        return pdo_execute_return_lastInsertId($sql);
+
+function checkAvailability($recieve, $return, $maPhong)
+{
+    $newRecieve = date('Y-m-d', strtotime($recieve));
+    $newReturn = date('Y-m-d', strtotime($return));
+
+    $sql = "SELECT COUNT(*) AS count FROM donhang WHERE maPhong = $maPhong 
+            AND ('$newRecieve' BETWEEN ngayNhan AND ngayTra OR '$newReturn' BETWEEN ngayNhan AND ngayTra)";
+
+    // Đảm bảo bạn đã thay thế pdo_query_one() bằng hàm tương tự trong mã của bạn
+    $result = pdo_query_one($sql);
+
+    return $result['count'] == 0; // Trả về true nếu không có lịch trùng, ngược lại trả về false
+}
+
+function createOrder($recieve, $return, $maPhong, $userid, $donGia)
+{
+    $newRecieve = date('Y-m-d', strtotime($recieve));
+    $newReturn = date('Y-m-d', strtotime($return));
+    $timestamp1 = strtotime($newRecieve);
+    $day1 = date('d', $timestamp1);
+    $month1 = date('m', $timestamp1);
+    $year1 = date('Y', $timestamp1);
+    $timestamp2 = strtotime($newReturn);
+    $day2 = date('d', $timestamp2);
+    $month2 = date('m', $timestamp2);
+    $year2 = date('Y', $timestamp2);
+    $tongtien = (($year2 * 365 + $month2 * 30 + $day2) - ($year1 * 365 + $month1 * 30 + $day1)) * $donGia;
+    
+    // Kiểm tra lịch trùng
+    if (!checkAvailability($newRecieve, $newReturn, $maPhong)) {
+        echo '<script>alert("Lịch đặt bị trùng. Vui lòng đặt lại!")</script>';
+        return false;
+
     }
+
+    $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien)
+            VALUES ('$newRecieve', '$newReturn', $maPhong, $userid, $tongtien)";
+
+    // Đảm bảo bạn đã thay thế pdo_execute_return_lastInsertId() bằng hàm tương tự trong mã của bạn
+    return pdo_execute_return_lastInsertId($sql);
+}
 ?>

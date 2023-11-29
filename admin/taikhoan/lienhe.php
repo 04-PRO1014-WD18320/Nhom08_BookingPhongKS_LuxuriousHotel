@@ -1,10 +1,10 @@
-<div class="row2">
-    <div class="row2 font_title">
+<div class="row">
+    <div class="row_header">
         <h1>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</h1>
     </div>
-    <div class="row2 form_content ">
+    <div class="row">
         <form action="#" method="POST">
-            <div class="row2 mb10 formds_loai">
+            <div class="row_nb10 fomdsloai">
                 <table>
                     <tr>
                         <th>MÃ TÀI KHOẢN</th>
@@ -13,6 +13,7 @@
                         <th>EMAIL</th>
                         <th>ĐỊA CHỈ</th>
                         <th>NỘI DUNG</th>
+                        <th>THAO TÁC</th>
                     </tr>
                     <?php
                     foreach ($listlienhe as $lienhe) {

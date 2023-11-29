@@ -31,6 +31,7 @@ if (isset($_SESSION['user'])) {
 
     <div class="container_titletk">
        <div class="titletk_box1">
+        
             <div class="box1_img">
                 <img src="./image/logochinh.jpg" alt="">
                 <p>Tên tài khoản: <?= $name_user ?></p>
@@ -38,7 +39,7 @@ if (isset($_SESSION['user'])) {
             <div class="box2_text">
                 <ul>
                     <li><a href="">Đăng nhập vào trang quản trị</a></li>
-                    <li><a href="">Giỏ Hàng</a></li>
+                    <li><a href="index.php?act=viewcart">Giỏ Hàng</a></li>
                     <li><a href="">Danh Sách Đặt Lịch</a></li>
                     <li><a href="">Danh Sách Yêu Thích</a></li>
                     <li><a href="index.php?act=quenmk">Quên Mật Khẩu</a></li>

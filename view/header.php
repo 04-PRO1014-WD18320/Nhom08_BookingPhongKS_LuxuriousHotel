@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/chitietphong.css">
     <link rel="stylesheet" href="css/chinhsach.css">
+    <link rel="stylesheet" href="css/thanhtoan.css">
+
+
     
 </head>
 <body>
@@ -19,7 +22,7 @@
         <div class="container_header">
             <div class="container_header_box1">
                 <div class="header_box1_img">
-                    <img src="image/logofb2.png" alt="">
+                    <!-- <img src="image/logofb2.png" alt=""> -->
                     <img src="image/logotw.png" alt="">
                     <img src="image/logogg.png" alt="">
                 </div>
