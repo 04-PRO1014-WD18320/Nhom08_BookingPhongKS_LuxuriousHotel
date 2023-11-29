@@ -67,8 +67,8 @@ function createOrder($recieve, $return, $maPhong, $userid, $donGia)
         echo '<script>alert("Lịch đặt bị trùng. Vui lòng đặt lại!")</script>';
         return false;
     }
-    $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien)
-            VALUES ('$newRecieve', '$newReturn', $maPhong, $userid, $tongtien)";
+    $sql = "INSERT INTO donhang (ngayNhan, ngayTra, maPhong, maKhachHang, tongTien) VALUES ('$newRecieve', '$newReturn', $maPhong, $userid, $tongtien)";
+           
     // Đảm bảo bạn đã thay thế pdo_execute_return_lastInsertId() bằng hàm tương tự trong mã của bạn
     return pdo_execute_return_lastInsertId($sql);
 }

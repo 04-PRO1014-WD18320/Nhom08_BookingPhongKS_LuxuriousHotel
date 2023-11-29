@@ -26,19 +26,13 @@
         
             <div class="ox1">
                 <p>Tên: <?= $name_user ?></p>
-                <div style = "display : flex ">
-                <p>Số Điện Thoại:</p>
-                <input type="text" value = "<?= $address_user ? $address_user : 'Không có' ?>">
-                </div>
+                
 
                 
             
             
                 <p>Email: <?= $email_user ?></p>
-                <div style = "display : flex ">
-                <p>Địa Chỉ:</p>
-                <input type="text" value="<?= $address_user ? $address_user : 'Không có' ?>">        
-                </div>
+                
 
             </div> 
 
