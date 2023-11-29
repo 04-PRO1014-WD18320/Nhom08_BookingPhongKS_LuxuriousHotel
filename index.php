@@ -20,7 +20,7 @@
     $top10 =  loadall_sanpham_top10();
     $spnew = loadall_sanpham_home();
     $dsdm = loadall_danhmuc();
-    $sp_cung_loai = loadone_sanpham_cungloai($id);
+    // $sp_cung_loai = loadone_sanpham_cungloai($id);
     // $sptrangct = loadall_sanpham_ct();
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
