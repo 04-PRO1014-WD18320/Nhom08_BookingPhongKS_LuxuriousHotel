@@ -1,25 +1,22 @@
 <div class="row">
     <div class="row_header">
-<<<<<<< HEAD
-        <h1>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</h1>
+        <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
     </div>
     <div class="row">
         <form action="#" method="POST">
             <div class="row_nb10 fomdsloai">
-=======
         <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
     </div>
     <div class="row ">
         <form action="#" method="POST">
-            <div class="row_mb20">
->>>>>>> 8267adff89719c526182e316461c40f600d5a185
+            <div class="row_nb10 fomdsloai">
                 <table>
                     <tr>
+                        <th></th>
                         <th>MÃ TÀI KHOẢN</th>
                         <th>HỌ TÊN</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                         <th>EMAIL</th>
-                        <th>ĐỊA CHỈ</th>
                         <th>NỘI DUNG</th>
                         <th>THAO TÁC</th>
                     </tr>
