@@ -33,32 +33,32 @@
     <h1>Kết quả tìm kiếm</h1>
                 <div class="title_box2_hotel2">
                     <?php
-                    foreach ($tensp as $sp){
-                        extract($sp);
-                        $hinh=$img_path.$img;
+                    foreach ($availableRooms as $room) {
+                        $hinh = $img_path . $room['img'];
                         echo '
-                        <a href="index.php?act=sanphamct&idsp='.$id.'">
-                        <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="'.$hinh.'" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="index.php?act=sanphamct&idsp='.$id.'">'.$name.'</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
+                            <a href="index.php?act=sanphamct&idsp=' . $room['id'] . '">
+                                <div class="hotel_sp">
+                                    <div class="content_sp_img">
+                                        <img src="' . $hinh . '" alt="">
+                                    </div>
+                                    <div class="hotel_sp_price">
+                                        <div class="hotel_sp_text">
+                                            <h3><a href="index.php?act=sanphamct&idsp=' . $room['id'] . '">' . $room['name'] . '</a></h3>
+                                            <div class="star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-regular fa-star"></i>
+                                            </div>
+                                            <h4>Giá: ' . $room['price'] . '$</h4>
+                                        </div>
+                                        <div class="hotel_sp_icon">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h4>Giá: '.$price.'$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div> </a>' ;
+                            </a>';
                     }
                     ?>
                 </div>
