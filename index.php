@@ -20,7 +20,7 @@
     $top10 =  loadall_sanpham_top10();
     $spnew = loadall_sanpham_home();
     $dsdm = loadall_danhmuc();
-    // $sp_cung_loai = loadone_sanpham_cungloai($id);
+    // $sp_cung_loai = loadone_sanpham_cungloai();
     // $sptrangct = loadall_sanpham_ct();
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -96,13 +96,17 @@
                             }
                         }
                     }
-                if (isset($_GET['idsp']) && ($_GET['idsp'])) {
+                if (isset($_GET['idsp']) && ($_GET['idsp']>0)) {
                     // Mã lệnh khi điều kiện đúng
                     $id = $_GET['idsp'];
-                    $sp_cung_loai =  loadone_sanpham_cungloai($id);
+                    
+                    $onesp = loadone_sanpham($id);
+                    extract($onesp);
+                    $sp_cung_loai =  loadone_sanpham_cungloai($id,$iddm);
+                    include "view/sanphamct.php";
+                }else{
+                    include "view/home.php";
                 }
-                $onesp = loadone_sanpham($id);
-                include "view/sanphamct.php";
                 break;
 
 

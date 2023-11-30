@@ -31,7 +31,7 @@
             </div>
 <div class="container_title_box1">
     <h1>Kết quả tìm kiếm</h1>
-                <div class="title_box2_hotel">
+                <div class="title_box2_hotel2">
                     <?php
                     foreach ($availableRooms as $room) {
                         $hinh = $img_path . $room['img'];
