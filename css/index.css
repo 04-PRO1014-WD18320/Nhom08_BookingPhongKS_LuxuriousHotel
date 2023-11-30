@@ -116,7 +116,15 @@ font-family: 'Poppins', sans-serif;
     border: 1px solid gray;
     font-size: 1rem;
 }
-
+.form_inputngay input[type="submit"]{
+   width: 120%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 1rem;
+    background-color: orange;
+    margin-top: 48px;
+}
 
 /*------------------------------------------------------------------------------tìm kiếm--------------------------------*/
 .input2{
@@ -165,7 +173,7 @@ hr{
 /*------------------------------------------------------------------ san pham -------------------------------*/
 .title_box2_hotel{
    margin-top: 10px;
-   width: 80%;
+   width: 100%;
    display: flex;
    justify-content: space-between;
 }

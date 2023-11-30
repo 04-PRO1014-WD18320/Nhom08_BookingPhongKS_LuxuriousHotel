@@ -8,6 +8,7 @@
             </div>
             <div class="container_banner_search">
                 <form action="index.php?act=sanpham" method="post">
+
                     <div class="search_box1">
                         <input type="text" name="kyw"  class="input1" placeholder="Bạn muốn tìm gì nào......">
                         <input type="submit" value="Tìm Kiếm" class="input2" name="timkiem">
@@ -38,22 +39,26 @@
                     <hr>
                     
                 </form>
-                <form action="index.php?act=sanphamtheongay" method="post">
+                
+            </div>
+            <div class="container_banner_search">
+               <form action="index.php?act=timkiem" method="post">
                     <div class="search_box3">
                         <div class="form_input1">
                             <p>Ngày Nhận Phòng</p>
-                            <input type="date" name="ngaynhan">
+                            <input type="date" name="ngaynhan" required>
                         </div>
                         <div class="form_input1">
                             <p>Ngày Trả Phòng</p>
-                            <input type="date" name="ngaytra">
+                            <input type="date" name="ngaytra" required>
                         </div>
-                        <div class="form_input1">
-                            <input type="submit" value="Tìm Kiếm theo Ngày" class="input2" name="timkiemngay">
+                        <div class="form_inputngay">
+                            <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
                         </div>
                     </div>
-                </form>
+                </form> 
             </div>
+            
         </div>
         <hr>
 
