@@ -2,9 +2,14 @@
     <div class="row_header">
         <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
     </div>
+    <div class="row">
+        <form action="#" method="POST">
+            <div class="row_nb10 fomdsloai">
+        <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
+    </div>
     <div class="row ">
         <form action="#" method="POST">
-            <div class="row_mb20">
+            <div class="row_nb10 fomdsloai">
                 <table>
                     <tr>
                         <th></th>
@@ -12,8 +17,8 @@
                         <th>HỌ TÊN</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                         <th>EMAIL</th>
-                        <th>ĐỊA CHỈ</th>
-                        <th>nỘI DUNG</th>
+                        <th>NỘI DUNG</th>
+                        <th>THAO TÁC</th>
                     </tr>
                     <?php
                     foreach ($listlienhe as $lienhe) {

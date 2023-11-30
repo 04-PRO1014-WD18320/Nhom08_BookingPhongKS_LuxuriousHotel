@@ -12,7 +12,7 @@
     include "view/header.php";
     include "global.php";
 
-
+    if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
     // if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
@@ -196,7 +196,8 @@
                 break;
             case 'chitiettk':
                 include "view/taikhoan/chitiettk.php";
-                break;
+                break;  
+
             case 'thanhtoan':
                 $id_bill = $_GET['id-bill'];
                 $one_bill = getOneBill($id_bill);

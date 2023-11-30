@@ -6,7 +6,6 @@ function pdo_get_connection(){
     $dburl = "mysql:host=localhost;dbname=duan1okok;charset=utf8";
     $username = 'root';
     $password = '';
-
     $conn = new PDO($dburl, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
@@ -85,22 +84,6 @@ function pdo_query_one($sql){
  * @return giá trị
  * @throws PDOException lỗi thực thi câu lệnh
  */
-function pdo_query_value($sql){
-    $sql_args = array_slice(func_get_args(), 1);
-    try{
-        $conn = pdo_get_connection();
-        $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        return array_values($row)[0];
-    }
-    catch(PDOException $e){
-        throw $e;
-    }
-    finally{
-        unset($conn);
-    }
-}
 function pdo_execute_return_lastInsertId($sql){
     $sql_args = array_slice(func_get_args(), 1);
     try{
