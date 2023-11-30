@@ -192,8 +192,10 @@ font-family: 'Poppins', sans-serif;
    width: 70%;
  }
  .img_chinh img{
+   border-radius: 10px;
+   margin-top: 10px;
    width: 97%;
-   height: 360px;
+   height: 400px;
  }
  .title_img_box img{
    width: 32%;
@@ -267,16 +269,22 @@ font-family: 'Poppins', sans-serif;
 
 
  /*------------------------------------------------------------------ san pham -------------------------------*/
- .title_box2_hotel{
+ .title_box2_hotel2{
    margin-top: 10px;
-   width: 100%;
+   width: 80%;
    display: flex;
-   justify-content: space-between;
+   flex-wrap: wrap;
+   justify-content: flex-start;
 }
-.hotel_sp{
+.title_box2_hotel2 .hotel_sp{
+   margin-right: 15px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+.title_box2_hotel2 .hotel_sp{
    border: 1px solid gray;
    border-radius: 5px;
-   width: 24%;
+   width: 23%;
 }
 .hotel_sp img{
    width: 100%;

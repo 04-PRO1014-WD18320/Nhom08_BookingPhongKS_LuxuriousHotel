@@ -13,6 +13,7 @@
               <th>Mã Phòng</th>
               <th>Mã Khách Hàng</th>
               <th>Tổng Tiền</th>
+              <th>Trạng Thái</th>
               <th></th>
             </tr>
             <?php
@@ -31,6 +32,7 @@
                     <td>'.$maPhong.'</td>
                     <td>'.$maKhachHang.'</td>
                     <td>'.$tongTien.'</td>
+                    <td>'.$trangthai.'</td>
                   <td><a href="'.$xoadh.'"><input type="button" value="Xóa"></a> </td>
                 </tr>
                 ';
@@ -38,12 +40,5 @@
             ?>
           </table>
         </div>
-        <!-- <div class="row_mb21">
-          <input type="button" value="Chọn tất cả">
-          <input type="button" value="Bỏ chọn tất cả">
-          <input type="button" name="" id="" value="xóa các mục đã chọn">
-          <a href="index.php?act=adddm"><input type="button" value="Nhập thêm"></a>
-          
-        </div> -->
       </div>
     </div>
