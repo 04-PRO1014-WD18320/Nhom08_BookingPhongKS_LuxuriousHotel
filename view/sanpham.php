@@ -29,6 +29,24 @@
                     </div>
                 </form>
             </div>
+            hr
+            <div class="container_banner_search">
+               <form action="index.php?act=timkiem" method="post">
+                    <div class="search_box3">
+                        <div class="form_input1">
+                            <p>Ngày Nhận Phòng</p>
+                            <input type="date" name="ngaynhan" required>
+                        </div>
+                        <div class="form_input1">
+                            <p>Ngày Trả Phòng</p>
+                            <input type="date" name="ngaytra" required>
+                        </div>
+                        <div class="form_inputngay">
+                            <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
+                        </div>
+                    </div>
+                </form> 
+            </div>
 <div class="container_title_box1">
     <h1>Kết quả tìm kiếm</h1>
                 <div class="title_box2_hotel2">
