@@ -41,45 +41,55 @@
     <table>
     <thead>
     <tr>
-    <th>ID Bill</th>
-            <th>Ngày Nhận</th>
-            <th>Ngày Trả</th>
-            <th>Mã Phòng</th>
-            <th>Mã Khách Hàng</th>
-            <th>Tổng Tiền</th>
+        <th>STT</th>
+        <th>Tên Khách Hàng</th>
+        <th>Tên Phòng</th>
+        <th>Ảnh Phòng</th>
+        <th>Ngày Nhận</th>
+        <th>Ngày Trả</th>
+        <th>Tổng Tiền</th>
+
     </tr>
   </thead>
   <tbody>
   <?php 
-            if (is_array($lichsudathang) && $lichsudathang != null){
-                for ($i = 0; $i < count($lichsudathang); $i++) {
-                    $id = $lichsudathang[$i]['id'];
-                    $ngayNhan = $lichsudathang[$i]['ngayNhan'];
-                    $ngayTra = $lichsudathang[$i]['ngayTra'];
-                    $maPhong = $lichsudathang[$i]['maPhong'];
-                    $maKhachHang = $lichsudathang[$i]['maKhachHang'];
-                    $tongTien = $lichsudathang[$i]['tongTien'];
-                   ?>
+    if (isset($lichsudathang) && is_array($lichsudathang) && $lichsudathang != null) {
+        for ($i = 0; $i < count($lichsudathang); $i++) {
+            $id = $lichsudathang[$i]['id'];
+            $maKhachHang = $lichsudathang[$i]['maKhachHang'];
+            $maPhong = $lichsudathang[$i]['maPhong'];
+            $url = "./image/";
+            $ngayNhan = $lichsudathang[$i]['ngayNhan'];
+            $ngayTra = $lichsudathang[$i]['ngayTra'];
+            $tongTien = $lichsudathang[$i]['tongTien'];
 
-                            <tr>
-                                <th scope="row"><?= $id ?></th>
-                                <td><?= $ngayNhan ?></td>
-                                <td><?= $ngayTra ?></td>
-                                <td><?= $maPhong ?></td>
-                                <td><?= $maKhachHang ?></td>
-                                <td><?= $tongTien ?></td>
-                                </tr>
-                                <?php } }?>
-   
-   
+
+            // Lấy tên phòng từ mã phòng
+            $tenPhong = getTenPhongByMaPhong($maPhong);
+            $tenKhachHang = getTenKhachHangByMaKhachHang($maKhachHang);
+            // $url = "./image"
+            $anhPhong = $url.getAnhPhongByAnhPhong($maPhong);
+            // var_dump ($anhPhong);
+            // Hiển thị thông tin lịch sử đặt hàng
+            ?>
+            <tr>
+                <th scope="row"><?= $id ?></th>
+                <td><?= $tenKhachHang ?></td>
+                <td><?= $tenPhong ?></td>
+                <td><img src="<?= $anhPhong ?>" alt="Ảnh Phòng" width="100"></td>
+                <td><?= $ngayNhan ?></td>   
+                <td><?= $ngayTra ?></td>
+                <td><?= $tongTien ?></td>   
+
+            </tr>
+        <?php
+        }
+    }
+
+?>
+     
+    
   </tbody>
-      
-
-      
-
-
-
     </table>
 </body>
 </html>
-

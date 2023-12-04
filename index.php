@@ -214,8 +214,9 @@
                 if(isset($_SESSION['user'])){
                     $maKhachHang = $_SESSION['user']['id'];   
                     $lichsudathang = select_bill_idUser_done($maKhachHang);
-                   
+
                 }
+          
                 include "view/lichsudathang.php";
                 break;
 
