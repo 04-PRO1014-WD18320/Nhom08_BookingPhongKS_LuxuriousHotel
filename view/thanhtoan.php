@@ -83,7 +83,7 @@
 
 <div id="qr-code" class="qr-code">
     <!-- Đây là nơi hiển thị mã QR -->
-    <img src="image/qr.png" alt="QR Code">
+    <img src="image/qr.jng" alt="QR Code">
     <p>Thanh toán thành công!</p>
 </div>
 

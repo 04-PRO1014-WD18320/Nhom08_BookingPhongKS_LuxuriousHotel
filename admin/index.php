@@ -150,7 +150,7 @@
                     $iddm = 0;
                 }
     
-                $listsanpham=loadall_sanpham($kyw, $iddm, $locgia);
+                $listsanpham=loadall_sanpham($kyw, $iddm);  
                 $listdanhmuc=loadall_danhmuc();
                 include "sanpham/list.php";
                 break;

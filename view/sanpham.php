@@ -29,7 +29,6 @@
                     </div>
                 </form>
             </div>
-            hr
             <div class="container_banner_search">
                <form action="index.php?act=timkiem" method="post">
                     <div class="search_box3">

@@ -22,7 +22,7 @@
                             <option value="4">Trên 1000</option>
                         </select>
                         <select name="iddm" id="">
-                        <option value="0" selected>Tất cả</option>
+                        <option value="0" selected> loại phòng</option>
                             <?php
                                 foreach ($dsdm as $danhmuc) {
                                 extract($danhmuc);
@@ -58,11 +58,11 @@
                     <div class="search_box3">
                         <div class="form_input1">
                             <p>Ngày Nhận Phòng</p>
-                            <input type="date" name="ngaynhan" required>
+                            <input type="date" name="ngaynhan" >
                         </div>
                         <div class="form_input1">
                             <p>Ngày Trả Phòng</p>
-                            <input type="date" name="ngaytra" required>
+                            <input type="date" name="ngaytra" >
                         </div>
                         <div class="form_inputngay">
                             <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
@@ -267,3 +267,36 @@
             <!-- ----------------------------------------------------------------container_footer------------------------------------------------------ -->
             
         </div>
+
+        <!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Ngăn chặn form submit mặc định
+
+            // Kiểm tra điều kiện tìm kiếm
+            var check_in_date = document.querySelector("input[name='ngaynhan']").value;
+            var check_out_date = document.querySelector("input[name='ngaytra']").value;
+
+            var today = new Date();
+            today.setHours(0, 0, 0, 0); // Đặt giờ, phút, giây thành 0 để so sánh ngày
+
+            var condition = true;
+            var errorMessage = "";
+
+            if (new Date(check_in_date) < today) {
+                condition = false;
+                errorMessage = "Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!";
+            } else if (new Date(check_in_date) >= new Date(check_out_date)) {
+                condition = false;
+                errorMessage = "Ngày đặt phải nhỏ hơn ngày trả!";
+            }
+
+            if (!condition) {
+                alert(errorMessage);
+            } else {
+                // Submit form
+                this.submit();
+            }
+        });
+    });
+</script> -->
