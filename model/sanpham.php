@@ -22,13 +22,13 @@ function loadall_sanpham($kyw, $iddm = 0, $locgia = "", $check_in_date = "", $ch
     
     if ($locgia != "") {
         if ($locgia == '1') {
-            $sql .= " AND price < 100"; // Dưới 100
+            $sql .= " AND price < 100000"; // Dưới 100
         } elseif ($locgia == '2') {
-            $sql .= " AND price BETWEEN 100 AND 300"; // Từ 100 đến 300
+            $sql .= " AND price BETWEEN 100000 AND 300000"; // Từ 100 đến 300
         } elseif ($locgia == '3') {
-            $sql .= " AND price > 500"; // Trên 500
+            $sql .= " AND price > 500000"; // Trên 500
         } elseif ($locgia == '4') {
-            $sql .= " AND price > 1000"; // Trên 1000
+            $sql .= " AND price > 1000000"; // Trên 1000
         }
     }
     

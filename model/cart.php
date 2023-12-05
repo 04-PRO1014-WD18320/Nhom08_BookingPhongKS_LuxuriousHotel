@@ -19,4 +19,17 @@
         return $tenPhong;
     }
     
+    function getTenKhachHangByMaKhachHang($maKhachHang) {
+        $sql = "SELECT user FROM taikhoan WHERE id = ?";
+        // var_dump ($sql);
+        $result = pdo_query($sql, $maKhachHang);
+        
+        if (!empty($result)) {
+            $tenKhachHang = $result[0]['user'];
+        } else {
+            $tenKhachHang = "Không tìm thấy tên khách hàng";
+        }
+        
+        return $tenKhachHang;
+    }
 ?>

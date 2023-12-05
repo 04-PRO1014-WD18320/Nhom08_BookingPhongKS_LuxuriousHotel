@@ -16,10 +16,10 @@
                     <div class="search_box2">
                     <select name="locgia" id="locgia">
                             <option value="0">Lọc Theo Giá</option>
-                            <option value="1">Dưới 100</option>
-                            <option value="2">100 - 300</option>
-                            <option value="3">Trên 500</option>
-                            <option value="4">Trên 1000</option>
+                            <option value="1">--Dưới 100.000VND--</option>
+                            <option value="2">--100.000 - 300.000VND--</option>
+                            <option value="3">--Trên 500.000VND--</option>
+                            <option value="4">--Trên 1.000.000VND--</option>
                         </select>
                         <select name="iddm" id="">
                         <option value="0" selected> loại phòng</option>
@@ -103,7 +103,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: '.$price.'$</h4>
+                                <h4>Giá: '.$price.'VND</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
@@ -114,16 +114,16 @@
                     ?>
                 </div>
             </div>
-            <div class="banner2">
+            <!-- <div class="banner2">
                 <img src="image/banner4.png" alt="">
-            </div>
+            </div> -->
 
             <!-- ---------------------------------------Yêu Thích--------------------------------------------------------- -->
             <div class="container_title_box1">
-                <div class="title_box1_text">
+                <!-- <div class="title_box1_text">
                     <h1>Phòng được nhiều người yêu thích nhất</h1>
                     <p>Luxurious Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
-                </div>
+                </div> -->
                 <div class="title_box2_hotel">
                     <?php
                         foreach ($top10 as $top10) {
@@ -146,7 +146,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: '.$price.'$</h4>
+                                <h4>Giá: '.$price.'VND</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
@@ -187,7 +187,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: '.$price.'$</h4>
+                                <h4>Giá: '.$price.'VND</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>

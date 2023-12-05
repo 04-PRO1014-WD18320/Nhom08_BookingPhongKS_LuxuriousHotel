@@ -59,10 +59,7 @@
                     ?>
                         <a href=""><i class="fa-solid fa-heart"></i></a>
                         <a href="index.php?act=chitiettk"><i class="fa-solid fa-user"></i></a>
-                    <?php
-                    }else{
-
-                    ?>
+                    <?php }else{ ?>
                         <a href="index.php?act=dangky"><input type="button" value="Đăng Ký" ></a>
                         <a href="index.php?act=dangnhap"><input type="button" value="Đăng Nhập"></a>
                     <?php } ?>
