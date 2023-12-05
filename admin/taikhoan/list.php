@@ -3,7 +3,7 @@
         <h1>DANH SÁCH TÀI KHOẢN</h1>
     </div>
     <div class="row">
-        <form action="#" method="POST">
+        <form action="index.php?act=listtk" method="POST">
             <div class="row_nb10 fomdsloai">
                 <table>
                     <tr>
@@ -31,7 +31,7 @@
                             <td>'.$address.'</td>
                             <td>'.$tel.'</td>
                             <td>'.$role.'</td>
-                            <td><a href="'. $suatk .'"><input type="button" value="Sửa"></a><a href="'. $xoatk .'"><input type="button" value="Xóa"></a></td>
+                            <td><a href="'. $suatk .'"><input type="button" value="Phân Quyền"></a><a href="'. $xoatk .'"><input type="button" value="Xóa"></a></td>
                         </tr>';
                     }
                     ?>

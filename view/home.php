@@ -37,11 +37,23 @@
                         </select>
                     </div>
                     <hr>
-                    
+                    <div class="search_box3">
+                        <div class="form_input1">
+                            <p>Ngày Nhận Phòng</p>
+                            <input type="date" name="ngaynhan" required>
+                        </div>
+                        <div class="form_input1">
+                            <p>Ngày Trả Phòng</p>
+                            <input type="date" name="ngaytra" required>
+                        </div>
+                        <!-- <div class="form_inputngay">
+                            <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
+                        </div> -->
+                    </div>
                 </form>
                 
             </div>
-            <div class="container_banner_search">
+            <!-- <div class="container_banner_search">
                <form action="index.php?act=timkiem" method="post">
                     <div class="search_box3">
                         <div class="form_input1">
@@ -57,7 +69,7 @@
                         </div>
                     </div>
                 </form> 
-            </div>
+            </div> -->
             
         </div>
         <hr>

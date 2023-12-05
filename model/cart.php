@@ -1,9 +1,22 @@
 <?php
     function loadall_thongke(){
-        $sql = "SELECT danhmuc.id AS madm, danhmuc.name AS tendm, COUNT(sanpham.id) AS countsp, MIN(sanpham.price) AS minprice, MAX(sanpham.price) AS maxprice, AVG(sanpham.price) AS avgprice ";
-        $sql .= "FROM sanpham LEFT JOIN danhmuc ON danhmuc.id = sanpham.iddm ";
-        $sql .= "GROUP BY danhmuc.id ORDER BY danhmuc.id DESC";
+        $sql = "SELECT * from donhang order by id desc";
         $listtk = pdo_query($sql);
         return $listtk;
     }
+
+    function getTenPhongByMaPhong($maPhong) {
+        $sql = "SELECT name FROM sanpham WHERE id = ?";
+        // var_dump ($sql);
+        $result = pdo_query($sql, $maPhong);
+        
+        if (!empty($result)) {
+            $tenPhong = $result[0]['name'];
+        } else {
+            $tenPhong = "Không tìm thấy phòng";
+        }
+        
+        return $tenPhong;
+    }
+    
 ?>
