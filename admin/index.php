@@ -150,16 +150,51 @@
                     $iddm = 0;
                 }
     
-                $listsanpham=loadall_sanpham($kyw, $iddm, $locgia);
+                $listsanpham=loadall_sanpham($kyw, $iddm);  
                 $listdanhmuc=loadall_danhmuc();
                 include "sanpham/list.php";
                 break;
 
                 //================= BÌNH LUẬN VÀ DANH SÁCH KHÁCH HÀNG
+                case 'listtk':
+                    # code...
+                    $listtaikhoan=loadall_taikhoan();
+                    include "taikhoan/list.php";
+                    break;
+                case 'xoatk':
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        delete_taikhoan($_GET['id']);
+                    }
+                    $listtaikhoan = loadall_taikhoan();
+                    include "taikhoan/list.php";
+            break;
+                // SỬA TAI KHOAN THEO ID 
+                case 'suatk':
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        $taikhoan = loadone_taikhoan($_GET['id']);
+                    }
+                    $listtaikhoan = loadall_taikhoan();
+                    include "taikhoan/update.php";
+                    break;
+                
+                case 'updatetk':
+                    if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                        $id=$_POST['id'];
+                        $role=$_POST['role'];
+                        
+                        phanquyen_taikhoan($id,$role);
+                        $thongbao = "cập nhập thành công thành công";
+                    }
+        
+                    $listtaikhoan=loadall_taikhoan();
+                    include "taikhoan/list.php";
+                    break;
+
                 case 'dsbl':
                     $listbinhluan=loadall_binhluan(0);    
                     include "binhluan/list.php";
                     break;
+
                 case 'xoabl':
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     delete_binhluan($_GET['id']);

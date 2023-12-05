@@ -43,3 +43,15 @@ favoriteIcons.forEach(icon => {
     }
   });
 });
+
+
+function myNut() {
+  let email = document.getElementById('email');
+  let regexEmail = /^\b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b$/;
+  let checkEmail = regexEmail.test(email.value);
+  if (email.value === "" || email.value === null) {
+      alert("Vui lòng nhập Email");
+  } else if (!checkEmail) {
+      alert('Email không hợp lệ');
+  }
+}
