@@ -23,7 +23,7 @@
 
                 function getTenPhongByMaPhong($maPhong) {
                     $sql = "SELECT name FROM sanpham WHERE id = ?";
-                    // var_dump ($sql);
+                    // var_dump ($sql);    
                     $result = pdo_query($sql, $maPhong);
                     
                     if (!empty($result)) {
