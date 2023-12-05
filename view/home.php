@@ -39,11 +39,11 @@
                     <div class="search_box3">
                         <div class="form_input1">
                             <p>Ngày Nhận Phòng</p>
-                            <input type="date" name="ngaynhan" >
+                            <input type="date" name="ngaynhan" required>
                         </div>
                         <div class="form_input1">
                             <p>Ngày Trả Phòng</p>
-                            <input type="date" name="ngaytra" >
+                            <input type="date" name="ngaytra" required>
                         </div>
                     </div>
                     <hr>

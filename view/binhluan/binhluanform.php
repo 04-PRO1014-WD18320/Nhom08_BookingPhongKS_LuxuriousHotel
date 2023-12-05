@@ -5,7 +5,6 @@
     $idpro = $_REQUEST['idpro'];
     $dsbl=loadall_binhluan($idpro);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +30,7 @@
 </head>
 <body>
     <div class="sidebar_danhmuc">
-        <!-- <div class="danhmuc_title">Bình Luận</div> -->
+        <div class="danhmuc_title">Bình Luận</div>
         <div class="danhmuc_box2 binhluan">
             <table>
                <?php
@@ -49,24 +48,52 @@
         </div>
         <div>
         <?php
-            if (isset($_SESSION['user'])) {
-                extract($_SESSION['user']);
-                echo '
-                <form id="commentForm" action="'. $_SERVER['PHP_SELF'] .'" method="POST">
-                    <input type="hidden" name="idpro" value="'. $idpro .'">
-                    <input type="text" name="noidung" placeholder="Nội dung bình luận">
-                    <input type="submit" name="guibinhluan" value="Gửi bình luận">
-                </form>
-                ';
-            } else {
-                echo '<h1>Bạn vui lòng đăng nhập để bình luận</h1>';
-            }
-        ?>
+                            if (isset($_SESSION['user'])) {
+                                extract($_SESSION['user']);
+                                echo '
+                                <form id="commentForm" action="'. $_SERVER['PHP_SELF'] .'" method="POST">
+                                    <input type="hidden" name="idpro" value="'. $idpro .'">
+                                    <input type="text" name="noidung" placeholder="Nội dung bình luận">
+                                    <input type="submit" name="guibinhluan" value="Gửi bình luận">
+                                </form>
+                                ';
+                            }else {
+                                echo'<h1>Bạn vui lòng đăng nhập để bình luận</h1>  ';
+                            }
+                        ?>
+        
         </div>
+        <?php
+// Kiểm tra và xử lý bình luận
+if (isset($_POST['guibinhluan']) && $_POST['guibinhluan']) {
+    $noidung = $_POST['noidung'];
+    $idpro = $_POST['idpro'];
+    $iduser = $_SESSION['user']['id'];
+    $ngaybinhluan = date('d/m/Y');
 
-    <script>
+    $badWords = ["cmm", "dmm", "cc"];
+    $hasBadWord = false;
+    foreach ($badWords as $badWord) {
+        if (stripos($noidung, $badWord) !== false) {
+            $hasBadWord = true;
+            break;
+        }
+    }
+
+    if ($hasBadWord) {
+        // echo '<h2>Bình luận không phù hợp!</h2>';
+    } else {
+        insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+}
+?>
+</body>
+</html>
+<script>
             commentForm.addEventListener("submit", function(event) {
-    event.preventDefault(); // Ngăn chặn form submit mặc định
+    // event.preventDefault(); // Ngăn chặn form submit mặc định
 
     var commentInput = document.getElementsByName("noidung")[0].value;
     var badWords = ["cmm", "dmm", "cc"]; // Các từ khóa bậy bạ
@@ -88,5 +115,4 @@
                 xhr.send(new FormData(commentForm));
             });
     </script>
-</body>
-</html>
+
