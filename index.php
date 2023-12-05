@@ -219,6 +219,12 @@
           
                 include "view/lichsudathang.php";
                 break;
+                case 'test': 
+
+                  
+              
+                    include "view/test.php";
+                    break;
 
 
       

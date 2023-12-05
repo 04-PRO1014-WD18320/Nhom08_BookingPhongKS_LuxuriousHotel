@@ -78,36 +78,133 @@
         <input type="radio" name="payment_option" value="tien_mat">
         Thanh toán bằng tiền mặt
     </label>
-    <button id="thanh-toan-btn">Thanh toán</button>
+    <button id="thanh-toan-btn" class="thanh_toan">Thanh toán</button>
 </div>
+
+<!-- ----------------------------------------------------------------- -->
+
+
+<div class="contain-overlay-product-detail">
+            <div class="contain-product-detail">
+
+            <!-- ------------------------------ -->
+                  <div class="sideBar_pay">
+                    <div class="timePay blockPayment" >
+                      <span>Đơn hàng hết hạn sau</span>
+                      <span class="timeRestPay">10:00</span>
+                    </div>
+                    <div class="timePay blockPayment">
+                      <span><i class="fa-solid fa-shop"></i> Nhà cung cấp</span>
+                      <span>Shop</span>
+                    </div>
+                    <div class="timePay blockPayment">
+                      <span><i class="fa-solid fa-money-bill"></i> Số tiền</span>
+                      <span>100 đ</span>
+                    </div>
+                    <div class="timePay blockPayment">
+                      <span><i class="fa-solid fa-circle-info"></i> Thông tin</span>
+                      <span>Thanh toán bằng MBbank</span>
+                      <span>STK : 123456789</span>
+                    </div>
+                    <div class="timePay blockPayment">
+                      <span><i class="fa-solid fa-id-card-clip"></i> Mã đơn hàng</span>
+                      <span > <?= $id ?></span>
+                    </div>
+                    <div class="timePay blockPayment">
+                      <button class="button-back-pay">
+                      <i class="fa-solid fa-arrow-left"></i> Quay lại
+                      </button>
+                    </div>
+                  </div>
+            <!-- ------------------------------ -->
+                  <div class="contain_QR_code">
+                    <div class="w-100 d-f jf-e">
+                        <div class="close_show">
+                          <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                
+                    <div class="contain_logo_MBbank">
+                          <div class="logo_MBbank">
+                            <!-- <img width="120px" src="./image/qr.jpg" alt=""> -->
+                          </div>
+                          <div class="logo_MBbank">
+                          <!-- <img width="120px"  src="./image/qr.jpg" alt=""> -->
+                          </div>
+                    </div>
+                    <div class="line_pay"></div>
+                    <div class="qr_code w-100 d-f al-c f-d">
+                      <h4 class="m-t-b10">Quét mã để thanh toán</h4>
+                      <div class="img_QR_code">
+                        <img src="./image/qr.jpg" width="230px" alt="">
+                      </div>
+                      <p>
+                         Sử dụng app MBBank để quét mã
+                      </p>
+                      <div>
+                        <span class="loading-pay "><i class="fa-solid fa-spinner loading-pay-icon loading-pay-icon-ani"></i></span>
+                        <span class="processing-pay">
+                        Đang chờ quét mã
+                        </span>
+                      </div>
+                    </div>
+                    <div class="notePay">
+                      * Sau khi chuyển khoản hãy chờ để ngân hàng xác nhận
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+
+            <script type="module" src="./js/thanhtoan.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------------ -->
+
+
+
 
 <div id="qr-code" class="qr-code">
     <!-- Đây là nơi hiển thị mã QR -->
-    <img src="image/qr.png" alt="QR Code">
+    <img src="./image/qr.jpg" alt="QR Code">
     <p>Thanh toán thành công!</p>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var thanhToanBtn = document.getElementById('thanh-toan-btn');
-        var qrCodeContainer = document.getElementById('qr-code');
 
-        thanhToanBtn.addEventListener('click', function () {
-            var selectedOption = document.querySelector('input[name="payment_option"]:checked').value;
+<!-- <script>
+    // Lấy thẻ button và thẻ QR code
+    var thanhToanBtn = document.getElementById("thanh-toan-btn");
+    var qrCodeDiv = document.getElementById("qr-code");
 
-            if (selectedOption === 'tai_khoan') {
-                // Xử lý thanh toán bằng tài khoản
-                alert('Thanh toán bằng tài khoản thành công!');
-            } else if (selectedOption === 'tien_mat') {
-                // Xử lý thanh toán bằng tiền mặt
-                // Hiển thị mã QR sau 10 giây
-                setTimeout(function () {
-                    qrCodeContainer.style.display = 'block';
-                }, 10000);
-            }
-        });
+    // Đăng ký sự kiện click cho button "Thanh toán"
+    thanhToanBtn.addEventListener("click", function() {
+        // Lấy giá trị của option được chọn
+        var paymentOption = document.querySelector('input[name="payment_option"]:checked').value;
+
+        if (paymentOption === "tai_khoan") {
+            // Hiển thị ảnh mã QR
+            qrCodeDiv.style.display = "block";
+
+            // Tự động chuyển sang trang khác sau 10 giây
+            setTimeout(function() {
+                qrCodeDiv.style.display = "none";
+                window.location.href = "trang-moi.html";
+            }, 10000);
+        } else {
+            // Xử lý thanh toán bằng tiền mặt ở đây (nếu cần)
+        }
     });
-</script>
+</script> -->
+
 
 </body>
 </html>
@@ -142,7 +239,7 @@ input[type="radio"] {
 
 </style>
 
-<script>
+<!-- <script>
     // Add an event listener to the button
     document.getElementById('thanh-toan-btn').addEventListener('click', function() {
         // Perform payment confirmation here
@@ -151,6 +248,8 @@ input[type="radio"] {
         // Assuming a successful payment, display a confirmation message
         alert('Thanh toán thành công!');
     });
-</script>
+</script> -->
+
+
 
 </div>
