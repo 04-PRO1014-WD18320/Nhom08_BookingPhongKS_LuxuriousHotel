@@ -36,6 +36,7 @@
                             ?>
                         </select>
                     </div>
+                    <hr>
                     <div class="search_box3">
                         <div class="form_input1">
                             <p>Ngày Nhận Phòng</p>
@@ -45,9 +46,10 @@
                             <p>Ngày Trả Phòng</p>
                             <input type="date" name="ngaytra" required>
                         </div>
+                        <!-- <div class="form_inputngay">
+                            <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
+                        </div> -->
                     </div>
-                    <hr>
-                    
                 </form>
                 
             </div>
