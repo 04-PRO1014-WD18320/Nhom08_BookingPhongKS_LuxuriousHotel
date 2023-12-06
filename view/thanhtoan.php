@@ -66,20 +66,24 @@
             display: none;
         }
     </style>
+
+    
 </head>
 <body>
 
-<div class="thanh-toan-options">
-    <label>
-        <input type="radio" name="payment_option" value="tai_khoan" checked>
-        Thanh toán bằng tài khoản
-    </label>
-    <label>
-        <input type="radio" name="payment_option" value="tien_mat">
-        Thanh toán bằng tiền mặt
-    </label>
-    <button id="thanh-toan-btn" class="thanh_toan">Thanh toán</button>
-</div>
+  <div class="thanh-toan-options">
+      <label>
+          <input type="radio" name="payment_option" value="tai_khoan" checked>
+          Thanh toán bằng tài khoản
+      </label>
+      <label>
+          <input type="radio" name="payment_option" value="tien_mat">
+          Thanh toán bằng tiền mặt
+      </label>
+      <button id="thanh-toan-btn" class="thanh_toan">Thanh toán</button>
+  </div>
+  
+  
 
 <!-- ----------------------------------------------------------------- -->
 
@@ -124,14 +128,7 @@
                         </div>
                     </div>
                 
-                    <div class="contain_logo_MBbank">
-                          <div class="logo_MBbank">
-                            <!-- <img width="120px" src="./image/qr.jpg" alt=""> -->
-                          </div>
-                          <div class="logo_MBbank">
-                          <!-- <img width="120px"  src="./image/qr.jpg" alt=""> -->
-                          </div>
-                    </div>
+        
                     <div class="line_pay"></div>
                     <div class="qr_code w-100 d-f al-c f-d">
                       <h4 class="m-t-b10">Quét mã để thanh toán</h4>
@@ -168,42 +165,7 @@
 
 
 
-<!-- ------------------------------------------------------------ -->
 
-
-
-
-<div id="qr-code" class="qr-code">
-    <!-- Đây là nơi hiển thị mã QR -->
-    <img src="./image/qr.jpg" alt="QR Code">
-    <p>Thanh toán thành công!</p>
-</div>
-
-
-<!-- <script>
-    // Lấy thẻ button và thẻ QR code
-    var thanhToanBtn = document.getElementById("thanh-toan-btn");
-    var qrCodeDiv = document.getElementById("qr-code");
-
-    // Đăng ký sự kiện click cho button "Thanh toán"
-    thanhToanBtn.addEventListener("click", function() {
-        // Lấy giá trị của option được chọn
-        var paymentOption = document.querySelector('input[name="payment_option"]:checked').value;
-
-        if (paymentOption === "tai_khoan") {
-            // Hiển thị ảnh mã QR
-            qrCodeDiv.style.display = "block";
-
-            // Tự động chuyển sang trang khác sau 10 giây
-            setTimeout(function() {
-                qrCodeDiv.style.display = "none";
-                window.location.href = "trang-moi.html";
-            }, 10000);
-        } else {
-            // Xử lý thanh toán bằng tiền mặt ở đây (nếu cần)
-        }
-    });
-</script> -->
 
 
 </body>
@@ -239,16 +201,6 @@ input[type="radio"] {
 
 </style>
 
-<!-- <script>
-    // Add an event listener to the button
-    document.getElementById('thanh-toan-btn').addEventListener('click', function() {
-        // Perform payment confirmation here
-        // You can use AJAX to send a request to the server for processing the payment
-
-        // Assuming a successful payment, display a confirmation message
-        alert('Thanh toán thành công!');
-    });
-</script> -->
 
 
 
