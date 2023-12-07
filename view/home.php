@@ -120,10 +120,9 @@
 
             <!-- ---------------------------------------Yêu Thích--------------------------------------------------------- -->
             <div class="container_title_box1">
-                <!-- <div class="title_box1_text">
+                <div class="title_box1_text"><br>
                     <h1>Phòng được nhiều người yêu thích nhất</h1>
-                    <p>Luxurious Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
-                </div> -->
+                </div>
                 <div class="title_box2_hotel">
                     <?php
                         foreach ($top10 as $top10) {
@@ -168,6 +167,7 @@
                 </div>
                 <div class="title_box2_hotel">
                     <?php
+                    shuffle($spnew);
                     foreach ($spnew as $sp){
                         extract($sp);
                         $hinh=$img_path.$img;
