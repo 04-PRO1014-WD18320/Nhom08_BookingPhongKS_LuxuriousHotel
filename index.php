@@ -20,6 +20,7 @@
 
     $top10 =  loadall_sanpham_top10();
     $spnew = loadall_sanpham_home();
+    $sphome = loadall_sanpham( $iddm = 0, $locgia = "", $check_in_date = "", $check_out_date = "");
     $dsdm = loadall_danhmuc();
     // $sp_cung_loai = loadone_sanpham_cungloai();
     // $sptrangct = loadall_sanpham_ct();
