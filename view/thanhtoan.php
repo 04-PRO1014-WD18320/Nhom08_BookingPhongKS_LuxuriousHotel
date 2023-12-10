@@ -154,20 +154,6 @@
             </div>
 
             <script type="module" src="./js/thanhtoan.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
 

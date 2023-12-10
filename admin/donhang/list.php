@@ -14,7 +14,10 @@
               <th>Tên Khách Hàng</th>
               <th>Tổng Tiền</th>
               <th>Trạng Thái</th>
-              <th></th>
+              <th>Ngày Check In</th>
+              <th>Ngày Check Out</th>
+              <th>Thao Tác</th>
+              <button></button>
             </tr>
             <?php
               foreach ($listdonhang as $donhang) {
@@ -24,6 +27,8 @@
                 $tenKhachHang = getTenKhachHangByMaKhachHang($maKhachHang);
                 // $suadm = "index.php?act=suadm&id= ".$id;
                 $xoadh = "index.php?act=xoadh&id= ".$id;
+                $checkin = "index.php?act=checkin&id= ".$id;
+                $checkout = "index.php?act=checkout&id= ".$id;
                 # code...
                 echo'
 
@@ -36,7 +41,9 @@
                     <td>'.$tenKhachHang.'</td>
                     <td>'.$tongTien.'</td>
                     <td>'.$trangthai.'</td>
-                  <td><a href="'.$xoadh.'"><input type="button" value="Xóa"></a> </td>
+                    <td>'.$ngayCheckIn.'</td>
+                    <td>'.$ngayCheckOut.'</td>
+                  <td><a href="'.$xoadh.'"><button><i class="fa-solid fa-trash"></i></button></a> <a href="'.$checkin.'"><input type="button" value="Check In"></a> <a href="'.$checkout.'"><input type="button" value="Check Out"></a></td>
                 </tr>
                 ';
               };

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/chitietphong.css">
     <link rel="stylesheet" href="css/chinhsach.css">
     <link rel="stylesheet" href="css/thanhtoan.css">
-
+    <link rel="stylesheet" href="css/binhluan.css">
 
     
 </head>
