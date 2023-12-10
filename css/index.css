@@ -59,9 +59,7 @@ font-family: 'Poppins', sans-serif;
     height: 80px;
  }
  .header_box2_logo img{
-    width: 120px;
-    height: 69px;
-    margin-left: 40px;
+    margin-left: 60px;
     border-radius: 50% 50%;
  }
  .header_box2_menu ul{
@@ -175,12 +173,20 @@ hr{
    margin-top: 10px;
    width: 100%;
    display: flex;
-   justify-content: space-between;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   /* justify-content: space-between; */
+}
+.title_box2_hotel .hotel_sp{
+   margin-right: 15px;
+   margin-top: 20px;
+   margin-bottom: 20px;
 }
 .hotel_sp{
    border: 1px solid gray;
    border-radius: 5px;
-   width: 24%;
+   width: 23%;
    min-height: 230px;
 }
 .hotel_sp img{
@@ -273,7 +279,7 @@ hr{
    margin-top: 20px;
 }
 .title_baiviet_box{
-   width: 30%;
+   width: 34%;
    height: auto;
    margin-left: 20px;
 }
@@ -347,8 +353,9 @@ hr{
    margin-top: 30px;
 }
 .footer_box2_text img{
-   width: 200px;
+   width: 100px;
    height: 100px;
+   border-radius: 50% 50%;
 }
 .footer_box2_text p{
    font-size: 0.9rem;
@@ -356,6 +363,9 @@ hr{
 .footer_box2_text ul li a{
    text-decoration: none;
    color: black;
+}
+.footer_box2_text p{
+   margin-left: 50px;
 }
 
 

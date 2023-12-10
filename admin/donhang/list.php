@@ -10,8 +10,8 @@
               <th>ID</th>
               <th>Ngày Nhận</th>
               <th>Ngày Trả</th>
-              <th>Mã Phòng</th>
-              <th>Mã Khách Hàng</th>
+              <th>Tên Phòng</th>
+              <th>Tên Khách Hàng</th>
               <th>Tổng Tiền</th>
               <th>Trạng Thái</th>
               <th>Ngày Check In</th>
@@ -22,6 +22,9 @@
             <?php
               foreach ($listdonhang as $donhang) {
                 extract ($donhang);
+
+                $tenPhong = getTenPhongByMaPhong($maPhong);
+                $tenKhachHang = getTenKhachHangByMaKhachHang($maKhachHang);
                 // $suadm = "index.php?act=suadm&id= ".$id;
                 $xoadh = "index.php?act=xoadh&id= ".$id;
                 $checkin = "index.php?act=checkin&id= ".$id;
@@ -34,8 +37,8 @@
                   <td>'.$id.'</td>
                   <td>'.$ngayNhan.'</td>
                     <td>'.$ngayTra.'</td>
-                    <td>'.$maPhong.'</td>
-                    <td>'.$maKhachHang.'</td>
+                    <td>'.$tenPhong.'</td>
+                    <td>'.$tenKhachHang.'</td>
                     <td>'.$tongTien.'</td>
                     <td>'.$trangthai.'</td>
                     <td>'.$ngayCheckIn.'</td>

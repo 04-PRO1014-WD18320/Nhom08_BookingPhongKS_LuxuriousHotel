@@ -9,6 +9,7 @@
     include "model/thanhtoan.php";
     include "model/lichsudathang.php";
     include "model/lienhe.php";
+    include "model/binhluan.php";
     include "view/header.php";
     include "global.php";
 
@@ -19,6 +20,7 @@
 
     $top10 =  loadall_sanpham_top10();
     $spnew = loadall_sanpham_home();
+    $sphome = loadall_sanpham( $iddm = 0, $locgia = "", $check_in_date = "", $check_out_date = "");
     $dsdm = loadall_danhmuc();
     // $sp_cung_loai = loadone_sanpham_cungloai();
     // $sptrangct = loadall_sanpham_ct();
@@ -51,20 +53,49 @@
                     }
                 }
                 break;
+
             case 'sanpham':
                 if (isset($_POST['timkiem'])) {
                     $kyw = isset($_POST['kyw']) ? $_POST['kyw'] : '';
                     $iddm = isset($_POST['iddm']) ? $_POST['iddm'] : 0;
                     $locgia = isset($_POST['locgia']) ? $_POST['locgia'] : '';
+
+                    $check_in_date = $_POST['ngaynhan'];
+                    $check_out_date = $_POST['ngaytra'];
+
+                    $check_in_date = isset($_POST['ngaynhan']) ? $_POST['ngaynhan'] : '';
+                    $check_out_date = isset($_POST['ngaytra']) ? $_POST['ngaytra'] : '';
+            
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $today = date('Y-m-d');
+            
+                    if ($check_in_date < $today) {
+                        $condition = false;
+                        echo '<script>alert("Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!")</script>';
+                    } else if ($check_in_date >= $check_out_date) {
+                        $condition = false;
+                        echo '<script>alert("Ngày đặt phải nhỏ hơn ngày trả!")</script>';
+                    } else {
+                        $condition = true;
+                    }
+            
+                    if ($condition) {
+                        $tensp = loadall_sanpham($kyw, $iddm, $locgia, $check_in_date, $check_out_date);
+                        $tendm = load_ten_dm($iddm);
+                        include "view/sanpham.php";
+                    }
                 } else {
                     $kyw = "";
                     $iddm = 0;
                     $locgia = "";
-                }
-                    $tensp = loadall_sanpham($kyw, $iddm, $locgia);
+                    $check_in_date = "";
+                    $check_out_date = "";
+                    $tensp = loadall_sanpham($kyw, $iddm, $locgia, $check_in_date, $check_out_date);
                     $tendm = load_ten_dm($iddm);
                     include "view/sanpham.php";
+                }
                 break;
+            
                 case 'sanphamtheongay':
                         include "view/sanpham.php";
                     break;
@@ -96,6 +127,7 @@
                             }
                         }
                     }
+                    
                 if (isset($_GET['idsp']) && ($_GET['idsp']>0)) {
                     // Mã lệnh khi điều kiện đúng
                     $id = $_GET['idsp'];

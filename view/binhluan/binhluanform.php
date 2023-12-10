@@ -2,13 +2,12 @@
 session_start();
 include "../../model/pdo.php";
 include "../../model/binhluan.php";
-$badWords = array("mẹ mày", "cặc" , "cha" , "dm");
 $idpro = $_REQUEST['idpro'];
 $dsbl = loadall_binhluan($idpro);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,47 +17,65 @@ $dsbl = loadall_binhluan($idpro);
         .binhluan table {
             width: 100%;
             margin: 0 auto;
-        }   
+        }
+
         .binhluan table td:nth-child(1) {
             width: 50%;
         }
+
         .binhluan table td:nth-child(2) {
             width: 20%;
         }
+
         .binhluan table td:nth-child(3) {
             width: 30%;
         }
-        .error {
+
+        h2 {
+            text-align: center;
+            margin-top: 80px;
             color: red;
+        }
+
+        .form_binhluan {
+            margin-top: 160px;
+            display: flex;
+        }
+
+        .form_binhluan input {
+            padding: 10px;
+        }
+
+        .noidungbl {
+            width: 100%;
+            border-radius: 0px 0px 0px 10px;
+        }
+
+        .submit {
+            border-radius: 0px 0px 10px 0px;
+            background-color: blue;
+            color: white;
         }
     </style>
 </head>
+
 <body>
     <div class="sidebar_danhmuc">
+
+        <div class="danhmuc_title"></div>
         <div class="danhmuc_box2 binhluan">
             <table>
                 <?php
-                $isInappropriate = false; // Thêm dòng này
                 foreach ($dsbl as $bl) {
                     extract($bl);
-                    $isInappropriate = false;
-                    foreach ($badWords as $badWord) {
-                        if (stripos($noidung, $badWord) !== false) {
-                            $isInappropriate = true;
-                            break;
-                        }
-                    }
-                    if ($isInappropriate) {
-                        continue;
-                    }
-                    echo '<tr><td>' . $noidung . '</td>';
+                    echo '<tr></tr><td>' . $noidung . '</td>';
                     echo '<td>' . $iduser . '</td>';
                     echo '<td>' . $ngaybinhluan . '</td></tr>';
                 }
                 ?>
             </table>
             <ul>
-                
+
             </ul>
         </div>
         <div>
@@ -66,47 +83,80 @@ $dsbl = loadall_binhluan($idpro);
             if (isset($_SESSION['user'])) {
                 extract($_SESSION['user']);
                 echo '
-                <form action="'. $_SERVER['PHP_SELF'] .'" method="POST">
-                    <input type="hidden" name="idpro" value="'. $idpro .'">
-                    <input type="text" name="noidung" placeholder="Nội dung bình luận">';
-                    
-                    if (isset($_POST['guibinhluan']) && $_POST['guibinhluan'] && $isInappropriate) {
-                        echo '<p class="error">Bạn đã bình luận không phù hợp. Vui lòng giữ văn hóa.</p>';
-                    }
-                    
-                    echo '<input type="submit" name="guibinhluan" value="Gửi bình luận">';
-                echo '</form>';
+                                <form class="form_binhluan" id="commentForm" action="' . $_SERVER['PHP_SELF'] . '" method="POST">
+                                    <input type="hidden" name="idpro" value="' . $idpro . '">
+                                    <input type="text" class="noidungbl" name="noidung" placeholder="Nội dung bình luận">
+                                    <input type="submit" class="submit" name="guibinhluan" value="Gửi bình luận">
+                                </form>
+                                ';
             } else {
-                echo '<h1>Bạn vui lòng đăng nhập để bình luận</h1>';
+                echo '<h2>Bạn vui lòng đăng nhập để bình luận <a href="index.php?act=dangnhap">Đăng Nhập</a></h2> ';
             }
             ?>
+
         </div>
         <?php
+        // Kiểm tra và xử lý bình luận
         if (isset($_POST['guibinhluan']) && $_POST['guibinhluan']) {
             $noidung = $_POST['noidung'];
             $idpro = $_POST['idpro'];
             $iduser = $_SESSION['user']['id'];
             $ngaybinhluan = date('d/m/Y');
-        
-            $isInappropriate = false;
+
+            $badWords = ["cmm", "dmm", "cc"];
+            $hasBadWord = false;
             foreach ($badWords as $badWord) {
                 if (stripos($noidung, $badWord) !== false) {
-                    $isInappropriate = true;
+                    $hasBadWord = true;
                     break;
                 }
             }
-        
-            if ($isInappropriate) {
-                echo '<script>alert("Bạn đã bình luận không phù hợp. Vui lòng giữ văn hóa.");</script>';
-                // header("location: " . $_SERVER['HTTP_REFERER']);
-                exit();
+
+            if ($hasBadWord) {
+                // echo '<h2>Bình luận không phù hợp!</h2>';
             } else {
                 insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
                 header("location: " . $_SERVER['HTTP_REFERER']);
                 exit();
             }
         }
-        ?> 
-    </div>
+    }
+
+    if ($hasBadWord) {
+        // echo '<h2>Bình luận không phù hợp!</h2>';
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    } else {
+        insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+}
+?>
 </body>
+
 </html>
+<script>
+    commentForm.addEventListener("submit", function (event) {
+        // event.preventDefault(); // Ngăn chặn form submit mặc định
+
+        var commentInput = document.getElementsByName("noidung")[0].value;
+        var badWords = ["cmm", "dmm", "cc"]; // Các từ khóa bậy bạ
+
+        for (var i = 0; i < badWords.length; i++) {
+            if (commentInput.includes(badWords[i])) {
+                alert("Bình luận không phù hợp!"); // Thông báo lỗi
+                return;
+            }
+        }
+        // Nếu không có từ khóa bậy bạ, gửi form bằng Ajax
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", commentForm.action, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Xử lý phản hồi từ máy chủ (nếu cần)
+            }
+        };
+        xhr.send(new FormData(commentForm));
+    });
+</script>

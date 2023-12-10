@@ -3,15 +3,29 @@
 
 <body>
 <div
-id="myChart" style="width:100%; max-width:600px; height:500px;">
+id="myChart" style="width:100%; max-width:800px; height:600px;">
 </div>
 
 <?php
-$tongdm=count($listthongke);
+$tongdm = count($listthongke);
 $dataArray = [];
+$thongkeArray = [];
+
 foreach ($listthongke as $thongke) {
-    extract($thongke);
-    $dataArray[] = [$thongke['tendm'], $thongke['countsp']];
+    $maPhong = $thongke['maPhong'];
+    $tongTien = $thongke['maPhong'];
+    // var_dump($maPhong);
+    $tenPhong = getTenPhongByMaPhong($maPhong);
+
+    if (!isset($thongkeArray[$tenPhong])) {
+        $thongkeArray[$tenPhong] = $tongTien;
+    } else {
+        $thongkeArray[$tenPhong] += $tongTien;
+    }
+}
+
+foreach ($thongkeArray as $maPhong => $tongTien) {
+    $dataArray[] = [$maPhong, $tongTien];
 }
 ?>
 <script>
@@ -32,7 +46,7 @@ const data = google.visualization.arrayToDataTable([
 
 // Set Options
 const options = {
-  title: 'Biểu đồ thống kê',
+  title: 'Biểu đồ thống kê Theo Đơn Hàng',
   is3D: true
 };
 
@@ -42,5 +56,7 @@ chart.draw(data, options);
 
 }
 </script>
-
+<div class="row_mb21">
+          <a href="index.php?act=thongke"><input type="button" value="Xem Chi Tiêt"></a>
+        </div>
 </body>

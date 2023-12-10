@@ -8,41 +8,79 @@ function delete_sanpham($id){
     $sql = "delete from sanpham where id=". $id;
     pdo_query($sql);
 }
-
-function loadall_sanpham($kyw, $iddm=0, $locgia=""){
-    $sql = "select * from sanpham where 1";
+function loadall_sanpham($kyw, $iddm = 0, $locgia = "", $check_in_date = "", $check_out_date = "")
+{
+    $sql = "SELECT * FROM sanpham WHERE 1";
+    
     if ($kyw != "") {
-        $sql .= " and name like '%" . $kyw . "%'";
+        $sql .= " AND name LIKE '%" . $kyw . "%'";
     }
+    
     if ($iddm > 0) {
-        $sql .= " and iddm = '" . $iddm . "'";
+        $sql .= " AND iddm = '" . $iddm . "'";
     }
+    
     if ($locgia != "") {
         if ($locgia == '1') {
-            $sql .= " AND price < 100"; // Dưới 100
+            $sql .= " AND price < 100000"; // Dưới 100
         } elseif ($locgia == '2') {
-            $sql .= " AND price BETWEEN 100 AND 300"; // Từ 100 đến 300
-        }elseif ($locgia == '3') {
-            $sql .= " AND price > 500"; // Trên 500
+            $sql .= " AND price BETWEEN 100000 AND 300000"; // Từ 100 đến 300
+        } elseif ($locgia == '3') {
+            $sql .= " AND price > 500000"; // Trên 500
         } elseif ($locgia == '4') {
-            $sql .= " AND price > 1000"; // Trên 1000
+            $sql .= " AND price > 1000000"; // Trên 1000
         }
     }
-    $sql .= " order by id desc";
+    
+    if ($check_in_date != "" && $check_out_date != "") {
+        $sql .= " AND id NOT IN (
+                    SELECT maPhong FROM donhang 
+                    WHERE ('$check_in_date' BETWEEN ngayNhan AND ngayTra) 
+                    OR ('$check_out_date' BETWEEN ngayNhan AND ngayTra)
+                )";
+    }
+    
+    $sql .= " ORDER BY id DESC";
+    
     $listsanpham = pdo_query($sql);
+    
     return $listsanpham;
 }
-function getAvailableRooms($check_in_date, $check_out_date)
-{
-    $sql = "SELECT * FROM sanpham WHERE id NOT IN (
-                SELECT maPhong FROM donhang 
-                WHERE ('$check_in_date' BETWEEN ngayNhan AND ngayTra) 
-                OR ('$check_out_date' BETWEEN ngayNhan AND ngayTra)
-            )";
 
-    $availableRooms = pdo_query($sql);
-    return $availableRooms;
-}
+// function loadall_sanpham($kyw, $iddm=0, $locgia=""){
+//     $sql = "select * from sanpham where 1";
+//     if ($kyw != "") {
+//         $sql .= " and name like '%" . $kyw . "%'";
+//     }
+//     if ($iddm > 0) {
+//         $sql .= " and iddm = '" . $iddm . "'";
+//     }
+//     if ($locgia != "") {
+//         if ($locgia == '1') {
+//             $sql .= " AND price < 100"; // Dưới 100
+//         } elseif ($locgia == '2') {
+//             $sql .= " AND price BETWEEN 100 AND 300"; // Từ 100 đến 300
+//         }elseif ($locgia == '3') {
+//             $sql .= " AND price > 500"; // Trên 500
+//         } elseif ($locgia == '4') {
+//             $sql .= " AND price > 1000"; // Trên 1000
+//         }
+//     }
+//     $sql .= " order by id desc";
+//     $listsanpham = pdo_query($sql);
+//     return $listsanpham;
+// }
+// function getAvailableRooms($check_in_date, $check_out_date)
+// {
+//     $sql = "SELECT * FROM sanpham WHERE id NOT IN (
+//                 SELECT maPhong FROM donhang 
+//                 WHERE ('$check_in_date' BETWEEN ngayNhan AND ngayTra) 
+//                 OR ('$check_out_date' BETWEEN ngayNhan AND ngayTra)
+//             )";
+
+//     $availableRooms = pdo_query($sql);
+//     return $availableRooms;
+// }
 
 function loadone_sanpham($id){
     $sql = "select * from sanpham where id =". $id;
@@ -55,7 +93,7 @@ function loadone_sanpham_cungloai($id,$iddm){
     return $listsanpham;
 }
     function loadall_sanpham_home(){
-        $sql = "select * from sanpham where 1 order by id desc limit 0,4";  
+        $sql = "select * from sanpham where 1 order by id desc limit 0,8";  
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }

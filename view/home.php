@@ -16,13 +16,13 @@
                     <div class="search_box2">
                     <select name="locgia" id="locgia">
                             <option value="0">Lọc Theo Giá</option>
-                            <option value="1">Dưới 100</option>
-                            <option value="2">100 - 300</option>
-                            <option value="3">Trên 500</option>
-                            <option value="4">Trên 1000</option>
+                            <option value="1">--Dưới 100.000VND--</option>
+                            <option value="2">--100.000 - 300.000VND--</option>
+                            <option value="3">--Trên 500.000VND--</option>
+                            <option value="4">--Trên 1.000.000VND--</option>
                         </select>
                         <select name="iddm" id="">
-                        <option value="0" selected>Tất cả</option>
+                        <option value="0" selected> loại phòng</option>
                             <?php
                                 foreach ($dsdm as $danhmuc) {
                                 extract($danhmuc);
@@ -37,12 +37,6 @@
                         </select>
                     </div>
                     <hr>
-                    
-                </form>
-                
-            </div>
-            <div class="container_banner_search">
-               <form action="index.php?act=timkiem" method="post">
                     <div class="search_box3">
                         <div class="form_input1">
                             <p>Ngày Nhận Phòng</p>
@@ -52,12 +46,30 @@
                             <p>Ngày Trả Phòng</p>
                             <input type="date" name="ngaytra" required>
                         </div>
+                        <!-- <div class="form_inputngay">
+                            <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
+                        </div> -->
+                    </div>
+                </form>
+                
+            </div>
+            <!-- <div class="container_banner_search">
+               <form action="index.php?act=timkiem" method="post">
+                    <div class="search_box3">
+                        <div class="form_input1">
+                            <p>Ngày Nhận Phòng</p>
+                            <input type="date" name="ngaynhan" >
+                        </div>
+                        <div class="form_input1">
+                            <p>Ngày Trả Phòng</p>
+                            <input type="date" name="ngaytra" >
+                        </div>
                         <div class="form_inputngay">
                             <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
                         </div>
                     </div>
                 </form> 
-            </div>
+            </div> -->
             
         </div>
         <hr>
@@ -91,7 +103,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: '.$price.'$</h4>
+                                <h4>Giá: '.$price.'VND</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
@@ -102,14 +114,14 @@
                     ?>
                 </div>
             </div>
-            <div class="banner2">
+            <!-- <div class="banner2">
                 <img src="image/banner4.png" alt="">
-            </div>
+            </div> -->
 
             <!-- ---------------------------------------Yêu Thích--------------------------------------------------------- -->
             <div class="container_title_box1">
                 <div class="title_box1_text">
-                    <h1>Phòng được nhiều người yêu thích nhất</h1>
+                    <h1>Khám Phá Thêm</h1>
                     <p>Luxurious Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
                 </div>
                 <div class="title_box2_hotel">
@@ -134,7 +146,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <h4>Giá: '.$price.'$</h4>
+                                <h4>Giá: '.$price.'VND</h4>
                             </div>
                             <div class="hotel_sp_icon">
                                 <i class="fa-solid fa-heart"></i>
@@ -147,48 +159,6 @@
             </div>
 
             <hr>
-
-            <!-- ---------------------------------------Khám Phá Thêm--------------------------------------------------------- -->
-            <div class="container_title_box1">
-                <div class="title_box1_text">
-                    <h1>Khám Phá Thêm</h1>
-                    <p>Poly's Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
-                </div>
-                <div class="title_box2_hotel">
-                    <?php
-                    foreach ($spnew as $sp){
-                        extract($sp);
-                        $hinh=$img_path.$img;
-                        echo '
-                        <a href="index.php?act=sanphamct&idsp='.$id.'">
-                        <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="'.$hinh.'" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="index.php?act=sanphamct&idsp='.$id.'">'.$name.'</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: '.$price.'$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div> </a>' ;
-                    }
-                    ?>
-                </div>
-            </div>
-
-            <hr>
-
             <!-- ----------------------------------------------------------container_title_tienich---------------------------------------------- -->
 
             <div class="container_title_tienich">
@@ -226,7 +196,12 @@
 
             <hr>
             <!-- ------------------------------------------------------------container_title_baiviet-------------------------------------------------------- -->
-            <div class="container_title_baiviet">
+            
+
+            <!-- ----------------------------------------------------------------container_footer------------------------------------------------------ -->
+          
+        </div>
+<div class="container_title_baiviet">
                 <h1>Bài viết nổi bật</h1>
                 <div class="title_baiviet">
                    <div class="title_baiviet_box">
@@ -250,8 +225,36 @@
                 </div>
                 
             </div>
+        <!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Ngăn chặn form submit mặc định
 
-            <hr>
-            <!-- ----------------------------------------------------------------container_footer------------------------------------------------------ -->
-            
-        </div>
+            // Kiểm tra điều kiện tìm kiếm
+            var check_in_date = document.querySelector("input[name='ngaynhan']").value;
+            var check_out_date = document.querySelector("input[name='ngaytra']").value;
+
+            var today = new Date();
+            today.setHours(0, 0, 0, 0); // Đặt giờ, phút, giây thành 0 để so sánh ngày
+
+            var condition = true;
+            var errorMessage = "";
+
+            if (new Date(check_in_date) < today) {
+                condition = false;
+                errorMessage = "Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!";
+            } else if (new Date(check_in_date) >= new Date(check_out_date)) {
+                condition = false;
+                errorMessage = "Ngày đặt phải nhỏ hơn ngày trả!";
+            }
+
+            if (!condition) {
+                alert(errorMessage);
+            } else {
+                // Submit form
+                this.submit();
+            }
+        });
+    });
+</script> -->
+

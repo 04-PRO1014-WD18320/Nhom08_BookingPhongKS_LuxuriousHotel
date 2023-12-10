@@ -1,11 +1,12 @@
 <div class="container_banner_search">
-                <form action="index.php?act=sanpham" method="POST">
+                <form action="index.php?act=sanpham" method="post">
+
                     <div class="search_box1">
                         <input type="text" name="kyw"  class="input1" placeholder="Bạn muốn tìm gì nào......">
                         <input type="submit" value="Tìm Kiếm" class="input2" name="timkiem">
                     </div>
                     <div class="search_box2">
-                        <select name="locgia" id="locgia">
+                    <select name="locgia" id="locgia">
                             <option value="0">Lọc Theo Giá</option>
                             <option value="1">Dưới 100</option>
                             <option value="2">100 - 300</option>
@@ -13,7 +14,7 @@
                             <option value="4">Trên 1000</option>
                         </select>
                         <select name="iddm" id="">
-                        <option value="0" selected>Tất cả</option>
+                        <option value="0" selected> loại phòng</option>
                             <?php
                                 foreach ($dsdm as $danhmuc) {
                                 extract($danhmuc);
@@ -27,7 +28,22 @@
                             ?>
                         </select>
                     </div>
+                    <hr>
+                    <div class="search_box3">
+                        <div class="form_input1">
+                            <p>Ngày Nhận Phòng</p>
+                            <input type="date" name="ngaynhan" required>
+                        </div>
+                        <div class="form_input1">
+                            <p>Ngày Trả Phòng</p>
+                            <input type="date" name="ngaytra" required>
+                        </div>
+                        <!-- <div class="form_inputngay">
+                            <input type="submit" value="Tìm Kiếm theo Ngày"  name="timkiemngay">
+                        </div> -->
+                    </div>
                 </form>
+                
             </div>
 <div class="container_title_box1">
     <h1>Kết quả tìm kiếm</h1>

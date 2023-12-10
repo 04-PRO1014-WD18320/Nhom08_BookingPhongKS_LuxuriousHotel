@@ -7,40 +7,40 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/dangkytk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="css/chitietphong.css">
     <link rel="stylesheet" href="css/chinhsach.css">
     <link rel="stylesheet" href="css/thanhtoan.css">
-
+    <link rel="stylesheet" href="css/binhluan.css">
 
     
 </head>
 <body>
     <div class="container">
-
         <!-- ---------------------------------------------container_header ------------------------------------------------------ -->
 
         <div class="container_header">
             <div class="container_header_box1">
                 <div class="header_box1_img">
-                    <!-- <img src="image/logofb2.png" alt=""> -->
                     <img src="image/logotw.png" alt="">
                     <img src="image/logogg.png" alt="">
                 </div>
                 <div class="header_box1_sdt">
                     <div class="header_box1_sdt1">
                         <i class="fa-solid fa-envelope"></i>
-                        <p>thaidoanphong@gmail.com</p>
+                        <p>datphongkhachsan@gmail.com</p>
                     </div>
                     <div class="header_box1_sdt1">
                         <i class="fa-solid fa-phone"></i>
-                        <p>0353113243</p>
+                        <p>00888999777</p>
                     </div>
                     
                 </div>
             </div>
             <div class="container_header_box2">
                 <div class="header_box2_logo">
-                    <a href="index.php"><img src="image/logochinh.jpg" alt=""></a>
+                    <a href="index.php"><img src="image/logo.png"alt=""></a>
                 </div>
                 <div class="header_box2_menu">
                     <ul>
@@ -59,10 +59,7 @@
                     ?>
                         <a href=""><i class="fa-solid fa-heart"></i></a>
                         <a href="index.php?act=chitiettk"><i class="fa-solid fa-user"></i></a>
-                    <?php
-                    }else{
-
-                    ?>
+                    <?php }else{ ?>
                         <a href="index.php?act=dangky"><input type="button" value="Đăng Ký" ></a>
                         <a href="index.php?act=dangnhap"><input type="button" value="Đăng Nhập"></a>
                     <?php } ?>

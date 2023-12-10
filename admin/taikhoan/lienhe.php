@@ -2,11 +2,6 @@
     <div class="row_header">
         <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
     </div>
-    <div class="row">
-        <form action="#" method="POST">
-            <div class="row_nb10 fomdsloai">
-        <p>THÔNG TIN KHÁCH HÀNG CẦN HỖ TRỢ</p>
-    </div>
     <div class="row ">
         <form action="#" method="POST">
             <div class="row_nb10 fomdsloai">

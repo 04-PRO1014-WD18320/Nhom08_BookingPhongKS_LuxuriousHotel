@@ -1,6 +1,3 @@
-<!-- <div class="banner">
-</div> -->
-<hr>
 <div class="container_titlect">
     <div class="title_box1">
         <div class="title_img">
@@ -18,7 +15,7 @@
         
             <div class="title_form">
             <?php
-        // Kiểm tra trạng thái đăng nhập
+
         if (isset($_SESSION['user'])) {
             ?>
                 <form action="" method="post">
@@ -32,13 +29,13 @@
                         <input type="number" name="maPhong" value="<?php echo $_GET['idsp'] ?>" hidden>
                         <input type="number" name="donGia" value="<?php echo $onesp['price'] ?>" hidden>
                         <input type="submit" name="order-btn" value="Đặt Phòng">
-                        <h3>Giá: <?= $onesp['price'] ?>$/Day</h3>
+                        <h3>Giá: <?= $onesp['price'] ?>/Day</h3>
                         <p>Lưu ý: Giá phòng sẽ thay đổi theo từng ngày từng thời điểm(ngày lễ, tết, cuối tuần)</p>
                         <h4>Diện Tích: <?= $onesp['dientich'] ?>m</h4>
                     </div>
                 </form>
                 <?php } else {
-            echo '<p class="ktradangnhap">Bạn cần đăng nhập để đặt phòng.</p>';
+            echo '<a class="dangnhap" href="index.php?act=dangnhap">Đăng Nhập</a><p class="ktradangnhap">Bạn cần đăng nhập để đặt phòng</p>';
         }
         ?>
             </div>
