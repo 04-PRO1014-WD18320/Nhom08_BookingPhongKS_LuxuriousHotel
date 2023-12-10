@@ -39,6 +39,16 @@ function loadall_donhang(){
     $listdonhang=pdo_query($sql);
     return $listdonhang;
 }
+function checkin($id) {
+    $currentTime = date('Y-m-d H:i:s'); 
+    $sql = "UPDATE donhang SET ngayCheckIn = '$currentTime' WHERE id = '$id'";
+    pdo_query($sql);
+}
+function checkout($id) {
+    $currentTime = date('Y-m-d H:i:s'); 
+    $sql = "UPDATE donhang SET ngayCheckOut = '$currentTime' WHERE id = '$id'";
+    pdo_query($sql);
+}
 function delete_donhang($id){
     $sql = "delete  from donhang where id=".$id;
     pdo_execute($sql);

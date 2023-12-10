@@ -9,16 +9,6 @@
             $listBill=pdo_query($sql);
             return  $listBill;
         }
-
-                   
-        
-        
-                // function getTenPhongByMaPhong($maPhong) {
-                //     $sql = "SELECT name FROM sanpham WHERE id = $maPhong ";
-                // var_dump ($sql);
-                //     $tenPhong = pdo_query($sql);
-                //     return $tenPhong;
-                // }
                 
 
                 function getTenPhongByMaPhong($maPhong) {
@@ -63,8 +53,4 @@
 
                     return $anhPhong;
                 }
-                
-
-
-?>
 ?>

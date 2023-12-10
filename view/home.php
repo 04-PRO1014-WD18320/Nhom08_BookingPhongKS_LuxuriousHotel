@@ -121,7 +121,7 @@
             <!-- ---------------------------------------Yêu Thích--------------------------------------------------------- -->
             <div class="container_title_box1">
                 <div class="title_box1_text">
-                    <h1>Phòng được nhiều người yêu thích nhất</h1>
+                    <h1>Khám Phá Thêm</h1>
                     <p>Luxurious Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
                 </div>
                 <div class="title_box2_hotel">
@@ -159,48 +159,6 @@
             </div>
 
             <hr>
-
-            <!-- ---------------------------------------Khám Phá Thêm--------------------------------------------------------- -->
-            <div class="container_title_box1">
-                <div class="title_box1_text">
-                    <h1>Khám Phá Thêm</h1>
-                    <p>Poly's Hotel đảm bảo các tiêu chí về chất lượng phòng, thiết bị nội thất và dịch vụ cơ bản, đáp ứng linh hoạt nhu cầu thuê phòng cùng mức giá hợp lý.</p>
-                </div>
-                <div class="title_box2_hotel">
-                    <?php
-                    foreach ($spnew as $sp){
-                        extract($sp);
-                        $hinh=$img_path.$img;
-                        echo '
-                        <a href="index.php?act=sanphamct&idsp='.$id.'">
-                        <div class="hotel_sp">
-                        <div class="content_sp_img">
-                            <img src="'.$hinh.'" alt="" >
-                        </div>
-                        <div class="hotel_sp_price">
-                            <div class="hotel_sp_text">
-                                <h3><a href="index.php?act=sanphamct&idsp='.$id.'">'.$name.'</a></h3>
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <h4>Giá: '.$price.'$</h4>
-                            </div>
-                            <div class="hotel_sp_icon">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                        </div>
-                    </div> </a>' ;
-                    }
-                    ?>
-                </div>
-            </div>
-
-            <hr>
-
             <!-- ----------------------------------------------------------container_title_tienich---------------------------------------------- -->
 
             <div class="container_title_tienich">
@@ -238,7 +196,12 @@
 
             <hr>
             <!-- ------------------------------------------------------------container_title_baiviet-------------------------------------------------------- -->
-            <div class="container_title_baiviet">
+            
+
+            <!-- ----------------------------------------------------------------container_footer------------------------------------------------------ -->
+          
+        </div>
+<div class="container_title_baiviet">
                 <h1>Bài viết nổi bật</h1>
                 <div class="title_baiviet">
                    <div class="title_baiviet_box">
@@ -262,12 +225,6 @@
                 </div>
                 
             </div>
-
-            <hr>
-            <!-- ----------------------------------------------------------------container_footer------------------------------------------------------ -->
-            
-        </div>
-
         <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("form").addEventListener("submit", function(event) {

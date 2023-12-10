@@ -7,9 +7,9 @@
             <h1>Đăng Ký Tài Khoản</h1>
             <p>Hãy đăng ký tài khoản để trải nghiệm những dịch vụ của chúng tôi!</p>
             <div class="from_input">
-                <input type="text" id="name" placeholder="Tên Tài Khoản" name="user" required>
-                <input type="text" id="email" placeholder="Email" name="email" required>
-                <input type="password" id="pass" placeholder="Mật Khẩu" name="pass" required>
+                <input type="text" id="name" placeholder="Tên Tài Khoản" name="user" >
+                <input type="text" id="email" placeholder="Email" name="email" >
+                <input type="password" id="pass" placeholder="Mật Khẩu" name="pass" >
             </div>
             <input type="submit" value="Đăng Ký" name="dangky">
             <h3 class="thongbao">

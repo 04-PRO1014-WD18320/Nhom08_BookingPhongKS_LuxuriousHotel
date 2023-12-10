@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="sidebar_danhmuc">
-        <div class="danhmuc_title">Bình Luận</div>
+        <!-- <div class="danhmuc_title">Bình Luận</div> -->
         <div class="danhmuc_box2 binhluan">
             <table>
                <?php
@@ -82,6 +82,8 @@ if (isset($_POST['guibinhluan']) && $_POST['guibinhluan']) {
 
     if ($hasBadWord) {
         // echo '<h2>Bình luận không phù hợp!</h2>';
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        exit();
     } else {
         insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
         header("location: " . $_SERVER['HTTP_REFERER']);

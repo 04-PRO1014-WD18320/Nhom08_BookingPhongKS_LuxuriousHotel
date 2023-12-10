@@ -29,7 +29,7 @@
                   <td>'.$iduser.'</td>
                   <td>'.$idpro.'</td>
                   <td>'.$ngaybinhluan.'</td>
-                  <td><a href="'.$xoabl.'"><input type="button" value="Xóa"></a> </td>
+                  <td><a href="'.$xoabl.'"><button><i class="fa-solid fa-trash"></i></button></a> </td>
                 </tr>
                 ';
               };
