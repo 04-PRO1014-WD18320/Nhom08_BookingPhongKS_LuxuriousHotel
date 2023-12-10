@@ -208,40 +208,8 @@
                 </div>
             </div>
 
-            <hr>
+            <hr style="border: none;">
+
             <!-- ----------------------------------------------------------------container_footer------------------------------------------------------ -->
             
         </div>
-
-        <!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Ngăn chặn form submit mặc định
-
-            // Kiểm tra điều kiện tìm kiếm
-            var check_in_date = document.querySelector("input[name='ngaynhan']").value;
-            var check_out_date = document.querySelector("input[name='ngaytra']").value;
-
-            var today = new Date();
-            today.setHours(0, 0, 0, 0); // Đặt giờ, phút, giây thành 0 để so sánh ngày
-
-            var condition = true;
-            var errorMessage = "";
-
-            if (new Date(check_in_date) < today) {
-                condition = false;
-                errorMessage = "Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!";
-            } else if (new Date(check_in_date) >= new Date(check_out_date)) {
-                condition = false;
-                errorMessage = "Ngày đặt phải nhỏ hơn ngày trả!";
-            }
-
-            if (!condition) {
-                alert(errorMessage);
-            } else {
-                // Submit form
-                this.submit();
-            }
-        });
-    });
-</script> -->

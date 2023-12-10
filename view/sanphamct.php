@@ -35,7 +35,7 @@
                     </div>
                 </form>
                 <?php } else {
-            echo '<p class="ktradangnhap">Bạn cần đăng nhập để đặt phòng.</p>';
+            echo '<a class="dangnhap" href="index.php?act=dangnhap">Đăng Nhập</a><p class="ktradangnhap">Bạn cần đăng nhập để đặt phòng</p>';
         }
         ?>
             </div>

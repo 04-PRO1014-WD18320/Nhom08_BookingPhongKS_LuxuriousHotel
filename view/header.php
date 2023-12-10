@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/dangkytk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="css/chitietphong.css">
     <link rel="stylesheet" href="css/chinhsach.css">
     <link rel="stylesheet" href="css/thanhtoan.css">
@@ -16,7 +18,6 @@
 </head>
 <body>
     <div class="container">
-
         <!-- ---------------------------------------------container_header ------------------------------------------------------ -->
 
         <div class="container_header">
@@ -39,7 +40,7 @@
             </div>
             <div class="container_header_box2">
                 <div class="header_box2_logo">
-                    <a href="index.php"><img src="image/logochinh.jpg" alt=""></a>
+                    <a href="index.php"><img src="image/logo.png"alt=""></a>
                 </div>
                 <div class="header_box2_menu">
                     <ul>
