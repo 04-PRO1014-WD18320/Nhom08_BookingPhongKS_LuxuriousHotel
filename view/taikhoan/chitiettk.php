@@ -42,7 +42,7 @@
         <div class="titletk_box1">
             
                 <div class="box1_img">
-                    <img src="./image/logochinh.jpg" alt="">
+                    <img src="./image/logo.png" alt="">
                     <p>Tên tài khoản: <?= $name_user ?></p>
                 </div>
                 <div class="box2_text">

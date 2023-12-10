@@ -26,7 +26,7 @@
           </ul>
         </div>
         <div class="title_web">
-          <iframe src="index.php?act=listsp" frameborder="0" allowfullscreen name="page"></iframe>
+          <iframe src="index.php?act=bieudo" frameborder="0" allowfullscreen name="page"></iframe>
         </div>
         
       </div>

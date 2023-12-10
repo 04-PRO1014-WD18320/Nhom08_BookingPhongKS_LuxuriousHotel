@@ -59,9 +59,7 @@ font-family: 'Poppins', sans-serif;
     height: 80px;
  }
  .header_box2_logo img{
-    width: 120px;
-    height: 69px;
-    margin-left: 40px;
+    margin-left: 60px;
     border-radius: 50% 50%;
  }
  .header_box2_menu ul{
@@ -355,8 +353,9 @@ hr{
    margin-top: 30px;
 }
 .footer_box2_text img{
-   width: 200px;
+   width: 100px;
    height: 100px;
+   border-radius: 50% 50%;
 }
 .footer_box2_text p{
    font-size: 0.9rem;
@@ -364,6 +363,9 @@ hr{
 .footer_box2_text ul li a{
    text-decoration: none;
    color: black;
+}
+.footer_box2_text p{
+   margin-left: 50px;
 }
 
 

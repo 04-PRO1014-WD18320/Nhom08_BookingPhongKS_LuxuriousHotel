@@ -18,8 +18,8 @@
             <tr>
               <th>NGÀY NHẬN</th>
               <th>NGÀY TRẢ</th>
-              <th>MÃ PHÒNG</th>
-              <th>MÃ KHÁCH HÀNG</th>
+              <th>TÊN PHÒNG</th>
+              <th>TÊN KHÁCH HÀNG</th>
               <th>TIỀN PHÒNG</th>
               <th>TRẠNG THÁI</th>
               <th></th>
@@ -31,12 +31,13 @@
 
                 $tt += $tongTien;
                 $tenPhong = getTenPhongByMaPhong($maPhong);
+                $tenKhachHang = getTenKhachHangByMaKhachHang($maKhachHang);
 
                 echo'<tr>
                 <td>'.$ngayNhan.'</td>
                 <td>'.$ngayTra.'</td>
                 <td>'.$tenPhong.' </td>
-                <td>'.$maKhachHang.'</td>
+                <td>'.$tenKhachHang.'</td>
                 <td>'.$tongTien.'</td>
                 <td>'.$trangthai.'</td>
                 <td></td>
