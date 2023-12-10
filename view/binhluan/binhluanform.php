@@ -61,6 +61,7 @@ $dsbl = loadall_binhluan($idpro);
 
 <body>
     <div class="sidebar_danhmuc">
+
         <div class="danhmuc_title"></div>
         <div class="danhmuc_box2 binhluan">
             <table>
@@ -119,7 +120,19 @@ $dsbl = loadall_binhluan($idpro);
                 exit();
             }
         }
-        ?>
+    }
+
+    if ($hasBadWord) {
+        // echo '<h2>Bình luận không phù hợp!</h2>';
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    } else {
+        insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+}
+?>
 </body>
 
 </html>

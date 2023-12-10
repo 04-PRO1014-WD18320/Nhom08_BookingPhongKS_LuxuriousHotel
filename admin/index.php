@@ -23,6 +23,22 @@
                 $listdonhang=loadall_donhang();
                 include "donhang/list.php";
                 break;
+            case 'checkin':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    checkin($_GET['id']);
+                }
+                $listdonhang = loadall_donhang();
+                include "donhang/list.php";
+                break;
+            case 'checkout':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    checkout($_GET['id']);
+                }
+                $listdonhang = loadall_donhang();
+                include "donhang/list.php";
+                break;
             case 'adddm':
                 // kiểm tra người dùng có click vào add hay ko
                 if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
@@ -234,6 +250,22 @@
                 include "thongke/bieudo.php";
                 # code...
                 break;
+                case 'checkin':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        date_default_timezone_set('Asia/Ho_Chi_Minh');
+                        checkin($_GET['id']);
+                    }
+                    $listdonhang = loadall_donhang();
+                    include "donhang/list.php";
+                    break;
+                case 'checkout':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        date_default_timezone_set('Asia/Ho_Chi_Minh');
+                        checkout($_GET['id']);
+                    }
+                    $listdonhang = loadall_donhang();
+                    include "donhang/list.php";
+                    break;
 
              
 

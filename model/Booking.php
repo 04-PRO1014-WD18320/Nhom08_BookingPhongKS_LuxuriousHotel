@@ -39,6 +39,16 @@ function loadall_donhang(){
     $listdonhang=pdo_query($sql);
     return $listdonhang;
 }
+function checkin($id) {
+    $currentTime = date('Y-m-d H:i:s'); 
+    $sql = "UPDATE donhang SET ngayCheckIn = '$currentTime' WHERE id = '$id'";
+    pdo_query($sql);
+}
+function checkout($id) {
+    $currentTime = date('Y-m-d H:i:s'); 
+    $sql = "UPDATE donhang SET ngayCheckOut = '$currentTime' WHERE id = '$id'";
+    pdo_query($sql);
+}
 function delete_donhang($id){
     $sql = "delete  from donhang where id=".$id;
     pdo_execute($sql);
@@ -71,5 +81,16 @@ function createOrder($recieve, $return, $maPhong, $userid, $donGia)
            
     // Đảm bảo bạn đã thay thế pdo_execute_return_lastInsertId() bằng hàm tương tự trong mã của bạn
     return pdo_execute_return_lastInsertId($sql);
+}
+
+function checkin($id) {
+    $currentTime = date('Y-m-d H:i:s'); 
+    $sql = "UPDATE donhang SET ngayCheckIn = '$currentTime' WHERE id = '$id'";
+    pdo_query($sql);
+}
+function checkout($id) {
+    $currentTime = date('Y-m-d H:i:s'); 
+    $sql = "UPDATE donhang SET ngayCheckOut = '$currentTime' WHERE id = '$id'";
+    pdo_query($sql);
 }
 ?>
