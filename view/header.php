@@ -22,18 +22,17 @@
         <div class="container_header">
             <div class="container_header_box1">
                 <div class="header_box1_img">
-                    <!-- <img src="image/logofb2.png" alt=""> -->
                     <img src="image/logotw.png" alt="">
                     <img src="image/logogg.png" alt="">
                 </div>
                 <div class="header_box1_sdt">
                     <div class="header_box1_sdt1">
                         <i class="fa-solid fa-envelope"></i>
-                        <p>thaidoanphong@gmail.com</p>
+                        <p>datphongkhachsan@gmail.com</p>
                     </div>
                     <div class="header_box1_sdt1">
                         <i class="fa-solid fa-phone"></i>
-                        <p>0353113243</p>
+                        <p>00888999777</p>
                     </div>
                     
                 </div>

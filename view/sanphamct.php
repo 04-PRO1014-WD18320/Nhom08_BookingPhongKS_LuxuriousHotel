@@ -1,6 +1,3 @@
-<!-- <div class="banner">
-</div> -->
-<hr>
 <div class="container_titlect">
     <div class="title_box1">
         <div class="title_img">
@@ -18,7 +15,7 @@
         
             <div class="title_form">
             <?php
-        // Kiểm tra trạng thái đăng nhập
+
         if (isset($_SESSION['user'])) {
             ?>
                 <form action="" method="post">
@@ -93,35 +90,3 @@
     </div>
 </div>
 </div>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Ngăn chặn form submit mặc định
-
-            // Kiểm tra điều kiện đặt phòng
-            var recieveDate = document.querySelector("input[name='recieve']").value;
-            var returnDate = document.querySelector("input[name='return']").value;
-
-            var today = new Date();
-            today.setHours(0, 0, 0, 0); // Đặt giờ, phút, giây thành 0 để so sánh ngày
-
-            var condition = true;
-            var errorMessage = "";
-
-            if (new Date(recieveDate) < today) {
-                condition = false;
-                errorMessage = "Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay!";
-            } else if (new Date(recieveDate) >= new Date(returnDate)) {
-                condition = false;
-                errorMessage = "Ngày đặt phải nhỏ hơn ngày trả!";
-            }
-
-            if (!condition) {
-                alert(errorMessage);
-            } else {
-                // Submit form
-                this.submit();
-            }
-        });
-    });
-</script> -->
